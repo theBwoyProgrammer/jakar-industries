@@ -25,8 +25,17 @@
     toggle.addEventListener('click', () => {
       const expanded = toggle.getAttribute('aria-expanded') === 'true';
       toggle.setAttribute('aria-expanded', String(!expanded));
-      nav.classList.toggle('nav--open');
+      toggle.classList.toggle('menu-toggle--open', !expanded);
+      nav.classList.toggle('nav--open', !expanded);
       document.body.classList.toggle('menu-open', !expanded);
+    });
+    nav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        toggle?.setAttribute('aria-expanded', 'false');
+        toggle?.classList.remove('menu-toggle--open');
+        nav.classList.remove('nav--open');
+        document.body.classList.remove('menu-open');
+      });
     });
   }
 </script>
@@ -68,7 +77,8 @@
     display: none;
     flex-direction: column;
     justify-content: center;
-    gap: 5px;
+    align-items: center;
+    gap: 6px;
     width: 44px;
     height: 44px;
     padding: 0;
@@ -85,10 +95,25 @@
 
   .hamburger {
     display: block;
-    width: 24px;
+    width: 22px;
     height: 2px;
     background: currentColor;
     border-radius: 1px;
+    transition: transform 0.25s var(--ease-out), opacity 0.2s ease;
+    transform-origin: 50% 50%;
+  }
+
+  /* X: move top and bottom lines to middle (6px gap + 2px line = 8px) and rotate */
+  .menu-toggle--open .hamburger:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .menu-toggle--open .hamburger:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle--open .hamburger:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
   }
 
   .nav {

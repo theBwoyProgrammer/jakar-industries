@@ -15,7 +15,7 @@ const { title, description, href, image } = Astro.props;
     <h3 class="card-title">{title}</h3>
     <p class="card-description">{description}</p>
     {href && (
-      <a href={href} class="card-link">Learn more</a>
+      <a href={href} class="card-link">Learn more<span aria-hidden="true"> →</span></a>
     )}
   </div>
 </article>
@@ -42,6 +42,11 @@ const { title, description, href, image } = Astro.props;
     background-image: var(--card-bg, none);
     background-size: cover;
     background-position: center;
+    transition: transform 0.4s var(--ease-out);
+  }
+
+  .card:hover .card-image {
+    transform: scale(1.05);
   }
 
   .card-body {
