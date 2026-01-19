@@ -1,0 +1,72 @@
+---
+import BaseLayout from '../components/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="What We're Building — Jakar Industries" description="Explore our capability areas: defense and tactical technology, first responder solutions, and integrated systems and training.">
+  <Hero title="What We're Building" subtitle="Technology designed for mission-critical environments." />
+  <section class="section" id="defense">
+    <h2>Defense & Tactical Technology</h2>
+    <p>We develop integrated systems and platforms for defense and tactical operations. Our technology is built to perform in demanding environments — from communications and sensing to decision support and coordination. We focus on reliability, interoperability, and the ability to operate in contested or austere conditions.</p>
+  </section>
+  <section class="section section--alt" id="first-responders">
+    <h2>First Responder Solutions</h2>
+    <p>First responders need tools that work when seconds count. We build technology tailored for law enforcement, fire, EMS, and emergency management — improving response times, situational awareness, and coordination in the field. Our solutions are designed to integrate with existing workflows and scale from single units to regional operations.</p>
+  </section>
+  <section class="section" id="integrated">
+    <h2>Integrated Systems & Training</h2>
+    <p>Technology alone is not enough. We provide end-to-end systems paired with training and sustainment support so teams can deploy, operate, and maintain capabilities effectively. From initial integration through lifecycle updates, we work alongside our partners to ensure long-term success.</p>
+  </section>
+  <section class="section section--alt" id="research">
+    <h2>Research & Development</h2>
+    <p>We invest in research and development to stay ahead of evolving mission needs. Our R&D efforts focus on emerging technologies, human factors, and resilience — so the solutions we deliver today are ready for the challenges of tomorrow.</p>
+  </section>
+  <section class="cta-strip">
+    <div class="section">
+      <h2>Let's talk</h2>
+      <p>Interested in a specific capability or partnership? Get in touch.</p>
+      <a href="/contact" class="btn btn--primary">Contact us</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .section h2 {
+    margin-bottom: var(--space-md);
+  }
+
+  .cta-strip {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+  }
+
+  .cta-strip h2 {
+    color: var(--color-white);
+  }
+
+  .cta-strip p {
+    margin-bottom: var(--space-lg);
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .btn {
+    display: inline-block;
+    padding: var(--space-md) var(--space-xl);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: var(--radius);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+  }
+
+  .btn--primary {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+  }
+
+  .btn--primary:hover {
+    background-color: #005a94;
+    text-decoration: none;
+    transform: translateY(-1px);
+  }
+</style>

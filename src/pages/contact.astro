@@ -1,0 +1,91 @@
+---
+import BaseLayout from '../components/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="Contact — Jakar Industries" description="Get in touch with Jakar Industries. Use our contact form or reach us by email.">
+  <Hero title="Get in Touch" subtitle="We'd like to hear from you." />
+  <section class="section">
+    <div class="contact-grid">
+      <div class="contact-form-wrap">
+        <h2>Send us a message</h2>
+        <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required />
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" />
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+          <button type="submit" class="btn btn--primary">Submit</button>
+        </form>
+      </div>
+      <div class="contact-fallback">
+        <h2>Other ways to reach us</h2>
+        <p><strong>Email:</strong> <a href="mailto:info@jakarindustries.com">info@jakarindustries.com</a></p>
+        <p><strong>Address:</strong><br />[Your address here]</p>
+        <p><strong>Phone:</strong> [Your phone here]</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2xl);
+    align-items: start;
+  }
+
+  @media (max-width: 767px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .contact-form-wrap h2,
+  .contact-fallback h2 {
+    margin-bottom: var(--space-lg);
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .contact-form label {
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    padding: var(--space-sm) var(--space-md);
+    border: 1px solid #ccc;
+    border-radius: var(--radius);
+  }
+
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+  }
+
+  .contact-form .btn {
+    align-self: flex-start;
+    margin-top: var(--space-sm);
+    cursor: pointer;
+    border: none;
+  }
+
+  .contact-fallback p {
+    margin-bottom: var(--space-md);
+  }
+
+  .contact-fallback a {
+    color: var(--color-primary);
+  }
+</style>

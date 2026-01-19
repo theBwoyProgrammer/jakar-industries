@@ -1,16 +1,96 @@
 ---
-
+import BaseLayout from '../components/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import Card from '../components/Card.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout title="Jakar Industries — Technology for Those Who Serve" description="Jakar Industries develops technology for military and first responders. Learn about our company, what we're building, and how to reach us.">
+  <Hero
+    title="Technology for Those Who Serve"
+    subtitle="We develop mission-critical technology for military and first responders — enabling those who protect and serve to operate with greater capability and confidence."
+    ctaText="Contact us"
+    ctaHref="/contact"
+    backgroundImage="https://images.unsplash.com/photo-1589254065878-42c9da997008?w=1920"
+  />
+  <section class="section">
+    <h2>About Jakar Industries</h2>
+    <p>Jakar Industries is focused on building technology that serves those on the front lines — from defense and tactical systems to solutions that help first responders save lives. We combine rigorous engineering with a deep understanding of mission demands to deliver tools that perform when it matters most.</p>
+  </section>
+  <section class="section section--alt">
+    <h2>What We're Building</h2>
+    <div class="card-grid">
+      <Card
+        title="Defense & Tactical Technology"
+        description="Integrated systems and platforms designed for defense and tactical operations, built for reliability in demanding environments."
+        href="/what-we-build#defense"
+        image="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800"
+      />
+      <Card
+        title="First Responder Solutions"
+        description="Technology tailored for first responders — improving response times, situational awareness, and coordination in the field."
+        href="/what-we-build#first-responders"
+        image="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800"
+      />
+      <Card
+        title="Integrated Systems & Training"
+        description="End-to-end systems paired with training and support so teams can deploy and sustain capabilities effectively."
+        href="/what-we-build#integrated"
+      />
+    </div>
+  </section>
+  <section class="cta-strip">
+    <div class="section">
+      <h2>Get in touch</h2>
+      <p>Interested in learning more or partnering with us? We'd like to hear from you.</p>
+      <a href="/contact" class="btn btn--primary">Contact us</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-xl);
+    margin-top: var(--space-lg);
+  }
+
+  .section h2 {
+    margin-bottom: var(--space-md);
+  }
+
+  .cta-strip {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+  }
+
+  .cta-strip h2 {
+    color: var(--color-white);
+  }
+
+  .cta-strip p {
+    margin-bottom: var(--space-lg);
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .btn {
+    display: inline-block;
+    padding: var(--space-md) var(--space-xl);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: var(--radius);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+  }
+
+  .btn--primary {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+  }
+
+  .btn--primary:hover {
+    background-color: #005a94;
+    text-decoration: none;
+    transform: translateY(-1px);
+  }
+</style>

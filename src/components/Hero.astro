@@ -1,0 +1,88 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  ctaText?: string;
+  ctaHref?: string;
+  backgroundImage?: string;
+}
+
+const { title, subtitle, ctaText, ctaHref, backgroundImage } = Astro.props;
+---
+
+<section class="hero" style={backgroundImage ? `--hero-bg: url(${backgroundImage})` : undefined}>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1 class="hero-title">{title}</h1>
+    {subtitle && <p class="hero-subtitle">{subtitle}</p>}
+    {ctaText && ctaHref && (
+      <a href={ctaHref} class="hero-cta">{ctaText}</a>
+    )}
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-3xl) var(--space-lg);
+    background-color: var(--color-dark);
+    background-image: var(--hero-bg, none);
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 34, 79, 0.75);
+  }
+
+  .hero:not([style*="--hero-bg"]) .hero-overlay {
+    background: linear-gradient(135deg, var(--color-dark) 0%, #003366 100%);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    text-align: center;
+  }
+
+  .hero-title {
+    color: var(--color-white);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: var(--space-md);
+    font-size: clamp(1.75rem, 4vw, 2.75rem);
+  }
+
+  .hero-subtitle {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    margin-bottom: var(--space-xl);
+    line-height: 1.5;
+  }
+
+  .hero-cta {
+    display: inline-block;
+    padding: var(--space-md) var(--space-xl);
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: var(--radius);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+  }
+
+  .hero-cta:hover {
+    background-color: #005a94;
+    text-decoration: none;
+    transform: translateY(-1px);
+  }
+</style>
