@@ -1,25 +1,51 @@
 ---
 import BaseLayout from '../components/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
+import Card from '../components/Card.astro';
 ---
 
 <BaseLayout title="What We're Building — Jakar Industries" description="Explore our capability areas: defense and tactical technology, first responder solutions, and integrated systems and training.">
-  <Hero title="What We're Building" subtitle="Technology designed for mission-critical environments." />
-  <section class="section" id="defense">
-    <h2>Defense & Tactical Technology</h2>
-    <p>We develop integrated systems and platforms for defense and tactical operations. Our technology is built to perform in demanding environments — from communications and sensing to decision support and coordination. We focus on reliability, interoperability, and the ability to operate in contested or austere conditions.</p>
+  <Hero 
+    title="Comprehensive Mission Support" 
+    subtitle="We provide end-to-end capabilities across land, air, sea, space, and cyberspace — delivering the technology that defines tomorrow's security landscape." 
+    backgroundImage="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=1920"
+  />
+  <section class="section capabilities-intro">
+    <span class="section-tag">Our Portfolio</span>
+    <h2 class="section-title">Technological Frontiers</h2>
+    <p class="capabilities-lead">Explore our diverse range of capabilities, each mission-proven and engineered for the extreme requirements of modern operational environments.</p>
   </section>
-  <section class="section section--alt" id="first-responders">
-    <h2>First Responder Solutions</h2>
-    <p>First responders need tools that work when seconds count. We build technology tailored for law enforcement, fire, EMS, and emergency management — improving response times, situational awareness, and coordination in the field. Our solutions are designed to integrate with existing workflows and scale from single units to regional operations.</p>
-  </section>
-  <section class="section" id="integrated">
-    <h2>Integrated Systems & Training</h2>
-    <p>Technology alone is not enough. We provide end-to-end systems paired with training and sustainment support so teams can deploy, operate, and maintain capabilities effectively. From initial integration through lifecycle updates, we work alongside our partners to ensure long-term success.</p>
-  </section>
-  <section class="section section--alt" id="research">
-    <h2>Research & Development</h2>
-    <p>We invest in research and development to stay ahead of evolving mission needs. Our R&D efforts focus on emerging technologies, human factors, and resilience — so the solutions we deliver today are ready for the challenges of tomorrow.</p>
+  <section class="section capabilities-grid-wrap">
+    <div class="capabilities-grid">
+      <Card
+        id="defense"
+        title="Defense & Tactical Technology"
+        description="Integrated systems and platforms for defense and tactical operations — built for reliability in demanding and contested environments."
+        href="/contact"
+        image="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800"
+      />
+      <Card
+        id="first-responders"
+        title="First Responder Solutions"
+        description="Technology tailored for law enforcement, fire, EMS, and emergency management — improving response times and situational awareness."
+        href="/contact"
+        image="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800"
+      />
+      <Card
+        id="integrated"
+        title="Integrated Systems & Training"
+        description="End-to-end systems paired with training and sustainment support so teams can deploy, operate, and maintain capabilities effectively."
+        href="/contact"
+        image="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800"
+      />
+      <Card
+        id="research"
+        title="Research & Development"
+        description="R&D in emerging technologies, human factors, and resilience — so the solutions we deliver are ready for tomorrow's challenges."
+        href="/contact"
+        image="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800"
+      />
+    </div>
   </section>
   <section class="cta-strip">
     <div class="section">
@@ -30,3 +56,49 @@ import Hero from '../components/Hero.astro';
   </section>
 </BaseLayout>
 
+<style>
+  .section-tag {
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-primary);
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .section-title {
+    margin-bottom: 2rem;
+  }
+
+  .capabilities-intro {
+    padding-bottom: var(--space-xl);
+  }
+
+  .capabilities-lead {
+    max-width: 800px;
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: #444;
+    margin: 0;
+    text-transform: none;
+    letter-spacing: normal;
+  }
+
+  .capabilities-grid-wrap {
+    padding-top: 0;
+    background-color: #fcfcfc;
+  }
+
+  .capabilities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-2xl);
+  }
+
+  @media (min-width: 900px) {
+    .capabilities-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>

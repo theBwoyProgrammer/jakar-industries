@@ -3,17 +3,19 @@
 
 <header class="site-header">
   <div class="header-inner">
-    <a href="/" class="logo">Jakar Industries</a>
+    <a href="/" class="logo">
+      <span class="logo-text">Jakar Industries</span>
+    </a>
     <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
       <span class="hamburger"></span>
       <span class="hamburger"></span>
       <span class="hamburger"></span>
     </button>
-    <nav class="nav" id="main-nav" aria-label="Main">
-      <a href="/">Home</a>
-      <a href="/about">About</a>
-      <a href="/what-we-build">What We're Building</a>
-      <a href="/contact">Contact</a>
+    <nav class="nav" id="main-nav" aria-label="Main Navigation">
+      <a href="/" class="nav-link">Home</a>
+      <a href="/about" class="nav-link">Who We Are</a>
+      <a href="/what-we-build" class="nav-link">What We Do</a>
+      <a href="/contact" class="nav-link">Contact</a>
     </nav>
   </div>
 </header>
@@ -45,15 +47,15 @@
     position: sticky;
     top: 0;
     z-index: 100;
-    background-color: var(--color-dark);
+    background-color: #000000;
     color: var(--color-white);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   .header-inner {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: var(--space-md) var(--space-lg);
+    padding: 1.5rem var(--space-lg);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -61,16 +63,22 @@
   }
 
   .logo {
-    font-weight: 700;
-    font-size: 1.25rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
     color: var(--color-white);
+  }
+
+  .logo-text {
+    font-weight: 900;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    line-height: 1;
   }
 
   .logo:hover {
     text-decoration: none;
-    opacity: 0.9;
   }
 
   .menu-toggle {
@@ -119,20 +127,38 @@
   .nav {
     display: flex;
     align-items: center;
-    gap: var(--space-xl);
+    gap: 2.5rem;
   }
 
-  .nav a {
+  .nav-link {
     color: var(--color-white);
-    font-weight: 600;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.04em;
-    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+    font-size: 0.85rem;
+    position: relative;
+    padding: 0.5rem 0;
+    transition: color 0.3s ease;
   }
 
-  .nav a:hover {
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-primary);
+    transition: width 0.3s ease;
+  }
+
+  .nav-link:hover {
     text-decoration: none;
-    opacity: 0.85;
+    color: var(--color-primary);
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
   }
 
   @media (max-width: 767px) {

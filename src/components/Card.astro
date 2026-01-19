@@ -4,18 +4,23 @@ interface Props {
   description: string;
   href?: string;
   image?: string;
+  id?: string;
 }
 
-const { title, description, href, image } = Astro.props;
+const { title, description, href, image, id } = Astro.props;
 ---
 
-<article class="card" style={image ? `--card-bg: url(${image})` : undefined}>
-  {image && <div class="card-image"></div>}
+<article class="card" id={id}>
+  {image && (
+    <div class="card-image-container">
+      <div class="card-image" style={`background-image: url(${image})`}></div>
+    </div>
+  )}
   <div class="card-body">
     <h3 class="card-title">{title}</h3>
     <p class="card-description">{description}</p>
     {href && (
-      <a href={href} class="card-link">Learn more<span aria-hidden="true"> →</span></a>
+      <a href={href} class="card-link">Learn More<span aria-hidden="true" class="arrow"> →</span></a>
     )}
   </div>
 </article>
@@ -23,26 +28,30 @@ const { title, description, href, image } = Astro.props;
 <style>
   .card {
     background: var(--color-white);
-    border-radius: var(--radius-lg);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    border: 1px solid #eee;
     overflow: hidden;
-    transition: box-shadow 0.2s ease, transform 0.2s ease;
+    transition: border-color 0.3s ease;
     display: flex;
     flex-direction: column;
   }
 
   .card:hover {
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-    transform: translateY(-2px);
+    border-color: var(--color-primary);
+  }
+
+  .card-image-container {
+    height: 200px;
+    overflow: hidden;
+    position: relative;
   }
 
   .card-image {
-    height: 180px;
-    background-color: var(--color-dark);
-    background-image: var(--card-bg, none);
+    position: absolute;
+    inset: 0;
+    background-color: #f0f0f0;
     background-size: cover;
     background-position: center;
-    transition: transform 0.4s var(--ease-out);
+    transition: transform 0.6s var(--ease-out);
   }
 
   .card:hover .card-image {
@@ -57,9 +66,13 @@ const { title, description, href, image } = Astro.props;
   }
 
   .card-title {
-    color: var(--color-dark);
-    margin-bottom: var(--space-sm);
+    color: #000;
+    margin-bottom: var(--space-md);
     font-size: 1.25rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
   }
 
   .card-description {
@@ -70,13 +83,29 @@ const { title, description, href, image } = Astro.props;
   }
 
   .card-link {
-    font-weight: 600;
-    color: var(--color-primary);
+    font-weight: 800;
+    color: #000;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.3s ease;
     margin-top: auto;
   }
 
-  .card-link:hover {
+  .card-link .arrow {
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+  }
+
+  .card:hover .card-link {
     text-decoration: none;
-    opacity: 0.9;
+    color: var(--color-primary);
+  }
+
+  .card:hover .card-link .arrow {
+    transform: translateX(4px);
   }
 </style>

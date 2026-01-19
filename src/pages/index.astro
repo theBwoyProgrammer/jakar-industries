@@ -1,41 +1,56 @@
 ---
 import BaseLayout from '../components/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
-import Card from '../components/Card.astro';
+import CapabilityCard from '../components/CapabilityCard.astro';
 ---
 
 <BaseLayout title="Jakar Industries — Technology for Those Who Serve" description="Jakar Industries develops technology for military and first responders. Learn about our company, what we're building, and how to reach us.">
   <Hero
-    title="Technology for Those Who Serve"
-    subtitle="We develop mission-critical technology for military and first responders — enabling those who protect and serve to operate with greater capability and confidence."
-    ctaText="Contact us"
-    ctaHref="/contact"
-    backgroundImage="https://images.unsplash.com/photo-1589254065878-42c9da997008?w=1920"
+    title="Defining the Future of Mission Solutions"
+    subtitle="We pioneer innovative technologies that empower military and first responders — delivering precision, reliability, and capability in the most demanding environments."
+    ctaText="Who We Are"
+    ctaHref="/about"
+    backgroundImage="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920"
   />
-  <section class="section">
-    <h2>About Jakar Industries</h2>
-    <p>Jakar Industries is focused on building technology that serves those on the front lines — from defense and tactical systems to solutions that help first responders save lives. We combine rigorous engineering with a deep understanding of mission demands to deliver tools that perform when it matters most.</p>
+  <section class="section intro-section">
+    <div class="intro-content">
+      <span class="section-tag">Overview</span>
+      <h2 class="section-title">Technological Excellence and Innovation</h2>
+      <p class="section-lead">Jakar Industries is a global leader in defense and public safety technology. We develop next-generation solutions that enable mission success. From advanced tactical systems to integrated responder networks, we push the boundaries of science and engineering to protect what matters most.</p>
+      <a href="/about" class="btn btn--secondary">Learn More</a>
+    </div>
   </section>
-  <section class="section section--alt">
-    <h2>What We're Building</h2>
-    <div class="card-grid">
-      <Card
+  <section class="capabilities-section">
+    <div class="capabilities-header">
+      <div class="capabilities-header-inner">
+        <h2 class="capabilities-heading">What We're Building</h2>
+        <p class="capabilities-sub">Our capability areas</p>
+      </div>
+    </div>
+    <div class="capabilities-inner">
+      <div class="capability-grid">
+      <CapabilityCard
         title="Defense & Tactical Technology"
-        description="Integrated systems and platforms designed for defense and tactical operations, built for reliability in demanding environments."
+        description="Integrated systems and platforms for defense and tactical operations — built for reliability in demanding environments."
         href="/what-we-build#defense"
-        image="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800"
+        image="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900"
+        cta="Explore defense capabilities"
       />
-      <Card
+      <CapabilityCard
         title="First Responder Solutions"
-        description="Technology tailored for first responders — improving response times, situational awareness, and coordination in the field."
+        description="Technology tailored for law enforcement, fire, EMS, and emergency management — improving response times and situational awareness."
         href="/what-we-build#first-responders"
-        image="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800"
+        image="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=900"
+        cta="Explore first responder capabilities"
       />
-      <Card
+      <CapabilityCard
         title="Integrated Systems & Training"
-        description="End-to-end systems paired with training and support so teams can deploy and sustain capabilities effectively."
+        description="End-to-end systems paired with training and sustainment support so teams can deploy and maintain capabilities effectively."
         href="/what-we-build#integrated"
+        image="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=900"
+        cta="Explore integrated capabilities"
       />
+      </div>
     </div>
   </section>
   <section class="cta-strip">
@@ -48,10 +63,111 @@ import Card from '../components/Card.astro';
 </BaseLayout>
 
 <style>
-  .card-grid {
+  .intro-section {
+    background-color: #fcfcfc;
+  }
+
+  .intro-content {
+    max-width: 900px;
+  }
+
+  .section-tag {
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-primary);
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    margin-bottom: 2rem;
+  }
+
+  .section-lead {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 2.5rem;
+    text-transform: none;
+    letter-spacing: normal;
+  }
+
+  .btn--secondary {
+    background-color: transparent;
+    color: #000;
+    border: 2px solid #000;
+  }
+
+  .btn--secondary:hover {
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .capabilities-header {
+    background: #000000;
+    padding: var(--space-3xl) 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .capabilities-header-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 var(--space-lg);
+  }
+
+  .capabilities-heading {
+    color: var(--color-white);
+    margin-bottom: var(--space-sm);
+    padding-bottom: var(--space-md);
+    position: relative;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+  }
+
+  .capabilities-heading::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 80px;
+    height: 4px;
+    background: var(--color-primary);
+  }
+
+  .capabilities-sub {
+    font-size: 1.1rem;
+    color: #999;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+  }
+
+  .capabilities-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: var(--space-3xl) var(--space-lg);
+  }
+
+  .capability-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: var(--space-xl);
-    margin-top: var(--space-lg);
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+  }
+
+  @media (min-width: 640px) {
+    .capability-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 960px) {
+    .capability-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-2xl);
+    }
   }
 </style>

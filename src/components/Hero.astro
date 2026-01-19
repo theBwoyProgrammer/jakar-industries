@@ -39,7 +39,12 @@ const { title, subtitle, ctaText, ctaHref, backgroundImage } = Astro.props;
   .hero-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0, 34, 79, 0.75);
+    background: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.8) 0%,
+      rgba(0, 0, 0, 0.4) 50%,
+      rgba(0, 0, 0, 0.2) 100%
+    );
   }
 
   .hero:not([style*="--hero-bg"]) .hero-overlay {
@@ -49,9 +54,12 @@ const { title, subtitle, ctaText, ctaHref, backgroundImage } = Astro.props;
   .hero-content {
     position: relative;
     z-index: 1;
-    max-width: 800px;
-    text-align: center;
-    animation: heroFadeIn 0.6s var(--ease-out) both;
+    max-width: 1000px;
+    width: 100%;
+    text-align: left;
+    margin-left: max(0px, calc((100% - 1400px) / 2));
+    padding: 0 var(--space-lg);
+    animation: heroFadeIn 0.8s var(--ease-out) both;
   }
 
   @keyframes heroFadeIn {
@@ -68,34 +76,40 @@ const { title, subtitle, ctaText, ctaHref, backgroundImage } = Astro.props;
   .hero-title {
     color: var(--color-white);
     text-transform: uppercase;
-    letter-spacing: 0.04em;
+    letter-spacing: -0.02em;
     margin-bottom: var(--space-md);
-    font-size: clamp(1.75rem, 4vw, 2.75rem);
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 900;
+    line-height: 1;
   }
 
   .hero-subtitle {
-    color: rgba(255, 255, 255, 0.95);
-    font-size: clamp(1rem, 2vw, 1.25rem);
-    margin-bottom: var(--space-xl);
-    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    margin-bottom: var(--space-2xl);
+    line-height: 1.4;
+    max-width: 60ch;
+    text-transform: none;
+    letter-spacing: normal;
   }
 
   .hero-cta {
     display: inline-block;
-    padding: var(--space-md) var(--space-xl);
+    padding: 1rem 2.5rem;
     background-color: var(--color-primary);
     color: var(--color-white);
-    font-weight: 700;
+    font-weight: 800;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    border-radius: var(--radius);
-    transition: background-color 0.2s ease, transform 0.2s ease;
+    letter-spacing: 0.1em;
+    border: 2px solid var(--color-primary);
+    transition: all 0.3s ease;
   }
 
   .hero-cta:hover,
   .hero-cta:focus-visible {
-    background-color: #005a94;
+    background-color: transparent;
+    color: var(--color-white);
     text-decoration: none;
-    transform: translateY(-1px);
+    border-color: var(--color-white);
   }
 </style>

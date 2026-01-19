@@ -1,27 +1,30 @@
 /* --- CSS custom properties --- */
 :root {
-  --color-dark: #00224f;
-  --color-primary: #0069b0;
+  --color-dark: #000000;
+  --color-primary: rgb(0, 38, 154);
   --color-white: #ffffff;
-  --color-light-bg: #f5f5f5;
-  --color-text: #1a1a1a;
-  --color-text-muted: #555;
+  --color-light-bg: #f9f9f9;
+  --color-text: #333333;
+  --color-text-muted: #666666;
 
-  --font-sans: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
+  --font-sans: "Montserrat", "Helvetica Neue", Arial, sans-serif;
 
   --space-xs: 0.25rem;
   --space-sm: 0.5rem;
   --space-md: 1rem;
   --space-lg: 1.5rem;
   --space-xl: 2rem;
-  --space-2xl: 3rem;
-  --space-3xl: 4rem;
+  --space-2xl: 3.5rem;
+  --space-3xl: 5rem;
 
-  --radius: 4px;
-  --radius-lg: 8px;
+  --radius: 0px;
+  --radius-lg: 0px;
 
-  --transition: 0.2s ease;
-  --ease-out: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out: cubic-bezier(0.4, 0, 0.2, 1);
+
+  --border-subtle: #DDDDDD;
+  --border-width: 2px;
 }
 
 /* --- Minimal reset --- */
@@ -98,8 +101,10 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 700;
-  line-height: 1.2;
+  font-weight: 800;
+  line-height: 1.1;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
 }
 
 h1 {
@@ -137,9 +142,9 @@ p:last-child {
 
 /* --- Section / container --- */
 .section {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: var(--space-2xl) var(--space-lg);
+  padding: var(--space-3xl) var(--space-lg);
 }
 
 .section h2 {
@@ -153,8 +158,8 @@ p:last-child {
   position: absolute;
   left: 0;
   bottom: 0;
-  width: 48px;
-  height: 3px;
+  width: 60px;
+  height: 4px;
   background: var(--color-primary);
 }
 
@@ -199,12 +204,14 @@ p:last-child {
 .btn--primary {
   background-color: var(--color-primary);
   color: var(--color-white);
+  border: 2px solid var(--color-primary);
 }
 
 .btn--primary:hover {
-  background-color: #005a94;
+  background-color: transparent;
+  color: var(--color-primary);
   text-decoration: none;
-  transform: translateY(-1px);
+  transform: none;
 }
 
 /* --- Skip link --- */
