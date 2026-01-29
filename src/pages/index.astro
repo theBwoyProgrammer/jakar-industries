@@ -1,173 +1,149 @@
 ---
 import BaseLayout from '../components/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
-import CapabilityCard from '../components/CapabilityCard.astro';
+import MarketSection from '../components/MarketSection.astro';
 ---
 
-<BaseLayout title="Jakar Industries — Technology for Those Who Serve" description="Jakar Industries develops technology for military and first responders. Learn about our company, what we're building, and how to reach us.">
+<BaseLayout title="Jakar Industries — Technology for Those Who Serve" description="Jakar Industries develops technology for military and first responders. Immerse yourself in our mission across defense, public safety, and innovation.">
   <Hero
+    isFullScreen={true}
     title="Defining the Future of Mission Solutions"
     subtitle="We pioneer innovative technologies that empower military and first responders — delivering precision, reliability, and capability in the most demanding environments."
-    ctaText="Who We Are"
-    ctaHref="/about"
-    backgroundImage="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920"
+    ctaText="Discover Our Mission"
+    ctaHref="#defense"
+    backgroundVideo="/videos/hero-jet.mp4"
+    marketLinks={[
+      { label: "Defense Ops", href: "#defense" },
+      { label: "First Responders", href: "#first-responders" },
+      { label: "Systems Support", href: "#systems-support" },
+      { label: "Innovation", href: "#innovation" }
+    ]}
   />
-  <section class="section intro-section">
-    <div class="intro-content">
-      <span class="section-tag">Overview</span>
-      <h2 class="section-title">Technological Excellence and Innovation</h2>
-      <p class="section-lead">Jakar Industries is a global leader in defense and public safety technology. We develop next-generation solutions that enable mission success. From advanced tactical systems to integrated responder networks, we push the boundaries of science and engineering to protect what matters most.</p>
-      <a href="/about" class="btn btn--secondary">Learn More</a>
-    </div>
-  </section>
-  <section class="capabilities-section">
-    <div class="capabilities-header">
-      <div class="capabilities-header-inner">
-        <h2 class="capabilities-heading">What We're Building</h2>
-        <p class="capabilities-sub">Our capability areas</p>
-      </div>
-    </div>
-    <div class="capabilities-inner">
-      <div class="capability-grid">
-      <CapabilityCard
-        title="Defense & Tactical Technology"
-        description="Integrated systems and platforms for defense and tactical operations — built for reliability in demanding environments."
-        href="/what-we-build#defense"
-        image="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900"
-        cta="Explore defense capabilities"
-      />
-      <CapabilityCard
-        title="First Responder Solutions"
-        description="Technology tailored for law enforcement, fire, EMS, and emergency management — improving response times and situational awareness."
-        href="/what-we-build#first-responders"
-        image="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=900"
-        cta="Explore first responder capabilities"
-      />
-      <CapabilityCard
-        title="Integrated Systems & Training"
-        description="End-to-end systems paired with training and sustainment support so teams can deploy and maintain capabilities effectively."
-        href="/what-we-build#integrated"
-        image="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=900"
-        cta="Explore integrated capabilities"
-      />
-      </div>
-    </div>
-  </section>
-  <section class="cta-strip">
+
+
+  <MarketSection
+    id="defense"
+    title="Defense Operations"
+    description="Providing elite military forces with the tactical advantage through advanced sensor integration, secure communications, and mission-proven hardware."
+    videoSrc="/videos/hero-jet.mp4"
+  />
+
+  <MarketSection
+    id="first-responders"
+    title="First Responders"
+    description="Empowering law enforcement and emergency services with real-time situational awareness and robust network solutions for critical safety missions."
+    videoSrc="/videos/hero-about.mp4"
+  />
+
+  <MarketSection
+    id="systems-support"
+    title="Systems Support"
+    description="End-to-end mission sustainment, including lifecycle management, specialized training, and 24/7 technical logistics for global operations."
+    videoSrc="/videos/hero-capabilities.mp4"
+  />
+
+  <MarketSection
+    id="innovation"
+    title="Innovation & AI"
+    description="Pioneering the next frontier of defense technology through autonomous systems, artificial intelligence, and next-generation data analytics."
+    videoSrc="/videos/hero-contact.mp4"
+  />
+
+  <section id="contact" class="cta-strip">
     <div class="section">
-      <h2>Get in touch</h2>
-      <p>Interested in learning more or partnering with us? We'd like to hear from you.</p>
-      <a href="/contact" class="btn btn--primary">Contact us</a>
+      <span class="section-tag">Direct Mission Support</span>
+      <h2>Partner with Jakar Industries</h2>
+      <p>Interested in learning more or partnering with us on a critical project? Our mission experts are ready to assist.</p>
+      <a href="mailto:info@jakarindustries.com" class="btn btn--outline">Connect with an Expert</a>
     </div>
   </section>
 </BaseLayout>
 
+<script>
+  // Orchestrate the morphing scroll experience
+  const sections = document.querySelectorAll('.market-section');
+  const marketLinks = document.querySelectorAll('.market-btn');
+
+  // Handle high-impact smooth scrolls
+  marketLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      const targetId = link.getAttribute('href');
+      if (targetId?.startsWith('#')) {
+        e.preventDefault();
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          // Add a temporary state for immediate reveal feel
+          targetElement.classList.add('market-section--preparing');
+          
+          targetElement.scrollIntoView({ behavior: 'smooth' });
+          
+          // Force reveal slightly early
+          setTimeout(() => {
+            targetElement.classList.add('market-section--visible');
+            targetElement.classList.remove('market-section--preparing');
+          }, 100);
+        }
+      }
+    });
+  });
+
+  // Intersection Observer for natural scroll reveals
+  const observerOptions = {
+    threshold: 0, // Trigger immediately on any intersection
+    rootMargin: '0px 0px 0px 0px' 
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const video = entry.target.querySelector('video[data-market-video]');
+
+      if (entry.isIntersecting) {
+        entry.target.classList.add('market-section--visible');
+        if (video) video.play().catch(() => {});
+      } else {
+        // Simple reset: if it's not intersecting, hide it
+        entry.target.classList.remove('market-section--visible');
+        if (video) video.pause();
+      }
+    });
+  }, observerOptions);
+
+  sections.forEach(section => observer.observe(section));
+
+  // Handle header transparency on scroll
+  const header = document.querySelector('.header');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      header?.classList.add('header--scrolled');
+    } else {
+      header?.classList.remove('header--scrolled');
+    }
+  }, { passive: true });
+</script>
+
 <style>
-  .intro-section {
-    background-color: #fcfcfc;
-  }
 
-  .intro-content {
-    max-width: 900px;
-  }
-
-  .section-tag {
-    font-size: 0.75rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    color: var(--color-primary);
-    display: block;
-    margin-bottom: 1rem;
-  }
-
-  .section-title {
-    font-size: clamp(1.5rem, 4vw, 3rem);
-    margin-bottom: 2rem;
-  }
-
-  .section-lead {
-    font-size: 1.25rem;
-    line-height: 1.6;
-    color: #444;
-    margin-bottom: 2.5rem;
-    text-transform: none;
-    letter-spacing: normal;
-  }
-
-  .btn--secondary {
-    background-color: transparent;
-    color: #000;
-    border: 2px solid #000;
-  }
-
-  .btn--secondary:hover {
+  .cta-strip {
     background-color: #000;
-    color: #fff;
-    text-decoration: none;
-  }
-
-  .capabilities-header {
-    background: #000000;
-    padding: var(--space-3xl) 0;
+    color: var(--color-white);
+    text-align: center;
+    padding: var(--space-4xl) var(--space-lg);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
   }
 
-  .capabilities-header-inner {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 var(--space-lg);
-  }
-
-  .capabilities-heading {
-    color: var(--color-white);
-    margin-bottom: var(--space-sm);
-    padding-bottom: var(--space-md);
-    position: relative;
-    font-size: clamp(2rem, 5vw, 3.5rem);
-  }
-
-  .capabilities-heading::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 80px;
-    height: 4px;
-    background: var(--color-primary);
-  }
-
-  .capabilities-sub {
-    font-size: 1.1rem;
-    color: #999;
-    margin: 0;
+  .cta-strip h2 {
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    margin-bottom: 1.5rem;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-    font-weight: 700;
+    font-weight: 900;
   }
 
-  .capabilities-inner {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: var(--space-3xl) var(--space-lg);
-  }
-
-  .capability-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--space-2xl);
-  }
-
-  @media (min-width: 640px) {
-    .capability-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  @media (min-width: 960px) {
-    .capability-grid {
-      grid-template-columns: repeat(3, 1fr);
-      gap: var(--space-2xl);
-    }
+  .cta-strip p {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 3rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
   }
 </style>

@@ -1,30 +1,43 @@
-/* --- CSS custom properties --- */
 :root {
   --color-dark: #000000;
-  --color-primary: rgb(0, 38, 154);
+  --color-primary: #0044ff;
+  /* Slightly more vibrant blue for cinematic feel */
   --color-white: #ffffff;
-  --color-light-bg: #f9f9f9;
-  --color-text: #333333;
-  --color-text-muted: #666666;
+  --color-light-bg: #111111;
+  --color-text: #e0e0e0;
+  --color-text-muted: #888888;
 
-  --font-sans: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-display: "Outfit", "Inter", sans-serif;
 
-  --space-xs: 0.25rem;
-  --space-sm: 0.5rem;
-  --space-md: 1rem;
-  --space-lg: 1.5rem;
-  --space-xl: 2rem;
-  --space-2xl: 3.5rem;
-  --space-3xl: 5rem;
+  /* Refined Fluid Typography Scale - Scaled down for balance */
+  --fs-300: clamp(0.7rem, 0.7vw + 0.35rem, 0.85rem);
+  --fs-400: clamp(0.85rem, 1vw + 0.4rem, 0.95rem);
+  --fs-500: clamp(1rem, 1.2vw + 0.5rem, 1.15rem);
+  --fs-600: clamp(1.2rem, 1.8vw + 0.8rem, 1.5rem);
+  --fs-700: clamp(1.5rem, 3vw + 1rem, 2.2rem);
+  --fs-800: clamp(2rem, 6vw + 1.2rem, 3.5rem);
+  --fs-900: clamp(2.5rem, 8vw + 1.5rem, 4.5rem);
+  --fs-max: clamp(2.2rem, 10vw, 5.5rem);
 
-  --radius: 0px;
-  --radius-lg: 0px;
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 5rem;
+  --space-3xl: 8rem;
+  --space-4xl: 12rem;
 
-  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  --ease-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --radius: 2px;
+  --radius-lg: 4px;
 
-  --border-subtle: #DDDDDD;
-  --border-width: 2px;
+  --transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-slow: cubic-bezier(0.7, 0, 0.3, 1);
+  --ease-out: cubic-bezier(0.33, 1, 0.68, 1);
+
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-width: 1px;
 }
 
 /* --- Minimal reset --- */
@@ -41,17 +54,21 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
   font-family: var(--font-sans);
-  font-size: 1rem;
+  font-size: var(--fs-400);
   line-height: 1.6;
-  color: var(--color-text);
-  background-color: var(--color-white);
+  color: var(--color-white);
+  background-color: var(--color-dark);
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  letter-spacing: -0.011em;
+  /* Inter optimization */
 }
 
 main {
@@ -81,7 +98,8 @@ a {
 }
 
 a:hover {
-  text-decoration: underline;
+  text-decoration: none;
+  opacity: 0.8;
 }
 
 /* --- Focus (accessibility) --- */
@@ -91,7 +109,7 @@ input:focus-visible,
 textarea:focus-visible,
 select:focus-visible {
   outline: 2px solid var(--color-primary);
-  outline-offset: 2px;
+  outline-offset: 4px;
 }
 
 /* --- Base typography --- */
@@ -101,22 +119,23 @@ h3,
 h4,
 h5,
 h6 {
+  font-family: var(--font-display);
   font-weight: 800;
-  line-height: 1.1;
+  line-height: 1.05;
   text-transform: uppercase;
   letter-spacing: -0.02em;
 }
 
 h1 {
-  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  font-size: var(--fs-900);
 }
 
 h2 {
-  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-size: var(--fs-700);
 }
 
 h3 {
-  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+  font-size: var(--fs-500);
 }
 
 p {
@@ -127,17 +146,34 @@ p:last-child {
   margin-bottom: 0;
 }
 
-/* --- Utilities --- */
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
+
+/* --- Buttons --- */
+.btn {
+  display: inline-block;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  font-size: 0.75rem;
+  transition: all 0.5s var(--transition);
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+}
+
+.btn--outline {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--color-white);
+  padding: 1.3rem 3.5rem;
+  backdrop-filter: blur(20px);
+}
+
+.btn--outline:hover {
+  background: var(--color-white);
+  color: var(--color-dark);
+  border-color: var(--color-white);
+  transform: translateY(-5px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
 }
 
 /* --- Section / container --- */
