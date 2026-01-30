@@ -22,7 +22,8 @@
             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
           </svg>
         </button>
-        <input type="text" class="search-input" id="search-input" placeholder="Search mission solutions..." />
+        <input type="text" class="search-input" id="search-input" placeholder="Search..." />
+        <div class="search-results" id="search-results"></div>
       </div>
     </div>
   </div>
@@ -47,20 +48,61 @@
     updateHeader();
   }
 
-  // Search expansion logic
+  // Search expansion and functionality
   if (searchContainer && searchInput && searchTrigger) {
     let isFocused = false;
+    const searchResults = document.getElementById('search-results');
+
+    // Searchable content
+    const searchableContent = [
+      { title: 'Defense Operations', url: '#defense', keywords: 'military defense tactical forces operations' },
+      { title: 'First Responders', url: '#first-responders', keywords: 'police emergency law enforcement public safety' },
+      { title: 'Systems Support', url: '#systems-support', keywords: 'logistics training technical support maintenance' },
+      { title: 'Innovation & AI', url: '#innovation', keywords: 'artificial intelligence autonomous technology research' },
+      { title: 'Contact Us', url: '#contact', keywords: 'contact email partnership collaboration' },
+    ];
+
+    const renderResults = (items) => {
+      if (!searchResults) return;
+      
+      if (items.length > 0) {
+        searchResults.innerHTML = items.map(item => 
+          `<a href="${item.url}" class="search-result-item" data-url="${item.url}">${item.title}</a>`
+        ).join('');
+        
+        // Add click handlers to results
+        searchResults.querySelectorAll('.search-result-item').forEach(link => {
+          link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const url = link.getAttribute('data-url');
+            const target = document.querySelector(url);
+            if (target) {
+              target.scrollIntoView({ behavior: 'smooth' });
+              collapse();
+              searchInput.value = '';
+            }
+          });
+        });
+      } else {
+        searchResults.innerHTML = '<div class="search-no-results">No results found</div>';
+      }
+    };
 
     const expand = () => {
       searchContainer.classList.add('search-container--expanded');
+      // Show all sections by default
+      renderResults(searchableContent);
     };
 
     const collapse = () => {
       if (!isFocused) {
         searchContainer.classList.remove('search-container--expanded');
+        if (searchResults) searchResults.innerHTML = '';
       }
     };
 
+    // Expand on trigger hover
+    searchTrigger.addEventListener('mouseenter', expand);
     searchContainer.addEventListener('mouseenter', expand);
     searchContainer.addEventListener('mouseleave', collapse);
 
@@ -71,8 +113,25 @@
 
     searchInput.addEventListener('blur', () => {
       isFocused = false;
-      // Slight delay to check if mouse is also gone
-      setTimeout(collapse, 100);
+      setTimeout(collapse, 300);
+    });
+
+    // Search functionality - filter as user types
+    searchInput.addEventListener('input', (e) => {
+      const query = e.target.value.toLowerCase().trim();
+      
+      if (!query) {
+        // Show all if empty
+        renderResults(searchableContent);
+        return;
+      }
+
+      const results = searchableContent.filter(item => 
+        item.title.toLowerCase().includes(query) || 
+        item.keywords.toLowerCase().includes(query)
+      );
+
+      renderResults(results);
     });
 
     // Mobile click handler
@@ -88,12 +147,17 @@
       }
     });
 
-    // Prevent collapse when clicking inside
     searchContainer.addEventListener('click', (e) => {
       e.stopPropagation();
     });
 
-    // Global click to collapse if not focused
+    // Prevent closing when clicking inside results
+    if (searchResults) {
+      searchResults.addEventListener('mousedown', (e) => {
+        e.preventDefault();
+      });
+    }
+
     document.addEventListener('click', () => {
       if (!isFocused) collapse();
     });
@@ -230,8 +294,9 @@
   }
 
   .search-trigger {
-    background: transparent;
-    border: none;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
     color: var(--color-white);
     cursor: pointer;
     display: flex;
@@ -241,12 +306,14 @@
     width: 44px;
     height: 44px;
     flex-shrink: 0;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease;
     z-index: 2;
   }
 
   .search-trigger:hover {
-    opacity: 0.8;
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.3);
   }
 
   .search-input {
@@ -267,6 +334,47 @@
     width: 220px;
     opacity: 1;
     padding: 0 1rem;
+  }
+
+  .search-results {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    overflow: hidden;
+    max-height: 300px;
+    overflow-y: auto;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  }
+
+  .search-result-item {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: background 0.2s ease, color 0.2s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .search-result-item:last-child {
+    border-bottom: none;
+  }
+
+  .search-result-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--color-white);
+  }
+
+  .search-no-results {
+    padding: 1rem;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.85rem;
+    text-align: center;
   }
 
   @media (max-width: 767px) {

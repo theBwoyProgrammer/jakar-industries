@@ -45,7 +45,7 @@ const {
   {marketLinks && marketLinks.length > 0 && (
     <div class="hero-market-nav">
       {marketLinks.map(link => (
-        <a href={link.href} class="market-btn">
+        <a href={link.href} class="market-btn hover-underline-animation">
           {link.label}
         </a>
       ))}
@@ -214,6 +214,11 @@ const {
   .market-btn:hover {
     color: var(--color-white);
     background-color: rgba(255, 255, 255, 0.08);
+  }
+
+  .market-btn.hover-underline-animation::after {
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.8);
   }
 
   .market-btn:last-child {
