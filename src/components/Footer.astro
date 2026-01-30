@@ -75,6 +75,7 @@ const year = new Date().getFullYear();
     font-size: 1.25rem;
     letter-spacing: 0.4em;
     color: var(--color-white);
+    text-align: center;
   }
 
   .footer-nav {
@@ -133,6 +134,21 @@ const year = new Date().getFullYear();
     .footer-name {
       font-size: 1rem;
       letter-spacing: 0.3em;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .footer-links {
+      gap: 1rem 1.5rem;
+    }
+
+    .footer-links a {
+      letter-spacing: 0.12em;
+    }
+
+    .footer-name {
+      font-size: 0.9rem;
+      letter-spacing: 0.2em;
     }
   }
 </style>

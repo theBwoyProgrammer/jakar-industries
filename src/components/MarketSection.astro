@@ -168,8 +168,10 @@ const { id, title, description, videoSrc, isFirst = false } = Astro.props;
 
   @media (max-width: 768px) {
     .market-section {
-      height: 100svh;
-      clip-path: inset(20% 0% 80% 0%);
+      height: auto;
+      min-height: 100svh;
+      padding: var(--space-3xl) 0;
+      clip-path: inset(0% 0% 0% 0%);
     }
     .market-section--visible { clip-path: inset(0% 0% 0% 0%); }
     .content-wrapper { padding: 0 var(--space-md); }
@@ -177,9 +179,11 @@ const { id, title, description, videoSrc, isFirst = false } = Astro.props;
     .description { font-size: 1rem; margin-bottom: var(--space-xl); }
     .btn--outline { padding: 1.1rem 2.8rem; width: 100%; max-width: 300px; }
     .text-content { transform: translateY(30px) scale(0.98); }
+    .section-tag { letter-spacing: 0.3em; margin-bottom: var(--space-md); }
   }
 
   @media (max-width: 480px) {
     .title { font-size: 2.2rem; }
+    .section-tag { font-size: 0.65rem; letter-spacing: 0.2em; }
   }
 </style>

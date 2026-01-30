@@ -7,8 +7,6 @@ interface MarketLink {
 interface Props {
   title: string;
   subtitle?: string;
-  ctaText?: string;
-  ctaHref?: string;
   backgroundImage?: string;
   backgroundVideo?: string;
   marketLinks?: MarketLink[];
@@ -18,8 +16,6 @@ interface Props {
 const { 
   title, 
   subtitle, 
-  ctaText, 
-  ctaHref, 
   backgroundImage, 
   backgroundVideo,
   marketLinks,
@@ -44,9 +40,6 @@ const {
   <div class="hero-content">
     <h1 class="hero-title">{title}</h1>
     {subtitle && <p class="hero-subtitle">{subtitle}</p>}
-    {ctaText && ctaHref && (
-      <a href={ctaHref} class="hero-cta">{ctaText}</a>
-    )}
   </div>
 
   {marketLinks && marketLinks.length > 0 && (
@@ -67,6 +60,19 @@ const {
   </div>
 </section>
 
+<script>
+  const heroVideo = document.querySelector('.hero-video');
+  const tryPlay = () => {
+    if (heroVideo && heroVideo.paused) {
+      heroVideo.play().catch(() => {});
+    }
+  };
+
+  window.addEventListener('load', tryPlay, { passive: true });
+  window.addEventListener('touchstart', tryPlay, { passive: true });
+  document.addEventListener('visibilitychange', tryPlay, { passive: true });
+</script>
+
 <style>
   .hero {
     position: relative;
@@ -83,9 +89,9 @@ const {
   }
 
   .hero--full {
-    height: 100vh;
-    height: 100svh;
+    height: auto;
     min-height: 100svh;
+    min-height: 100dvh;
   }
 
   .hero-video {
@@ -155,12 +161,13 @@ const {
     font-weight: 900;
     line-height: 0.9;
     text-shadow: 0 20px 80px rgba(0, 0, 0, 0.8);
+    text-wrap: balance;
   }
 
   .hero-subtitle {
     color: rgba(255, 255, 255, 0.8);
     font-size: var(--fs-500);
-    margin-bottom: var(--space-2xl);
+    margin-bottom: var(--space-xl);
     line-height: 1.5;
     max-width: 60ch;
     margin-left: auto;
@@ -170,29 +177,6 @@ const {
     font-weight: 500;
   }
 
-  .hero-cta {
-    display: inline-block;
-    padding: 1.3rem 4rem;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: var(--color-white);
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 0.3em;
-    font-size: 0.75rem;
-    transition: all 0.5s var(--transition);
-    backdrop-filter: blur(20px);
-    text-decoration: none;
-  }
-
-  .hero-cta:hover {
-    background: var(--color-white);
-    color: var(--color-dark);
-    border-color: var(--color-white);
-    transform: translateY(-5px);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-  }
-
   .hero-market-nav {
     position: absolute;
     bottom: 0;
@@ -200,36 +184,33 @@ const {
     right: 0;
     display: flex;
     justify-content: center;
-    border-top: 1px solid var(--border-subtle);
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
     z-index: 20;
-    background-color: rgba(0, 0, 0, 0.9);
-    backdrop-filter: blur(40px);
+    background-color: transparent;
   }
 
   .market-btn {
     flex: 1;
-    height: 100px;
+    height: 64px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 0.7);
     text-transform: uppercase;
-    font-weight: 800;
-    font-size: 0.7rem;
-    letter-spacing: 0.2em;
-    border-right: 1px solid var(--border-subtle);
-    transition: all 0.6s var(--transition);
+    font-weight: 700;
+    font-size: 0.62rem;
+    letter-spacing: 0.32em;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    transition: color 0.3s ease, background-color 0.3s ease;
     text-decoration: none;
     position: relative;
-    padding: 0 1rem;
+    padding: 0 0.75rem;
     text-align: center;
   }
 
   .market-btn:hover {
     color: var(--color-white);
-    background-color: rgba(255, 255, 255, 0.03);
-    height: 120px;
-    margin-top: -20px;
+    background-color: rgba(255, 255, 255, 0.08);
   }
 
   .market-btn:last-child {
@@ -238,19 +219,19 @@ const {
 
   .hero-scroll-indicator {
     position: absolute;
-    bottom: 11rem;
+    bottom: 6rem;
     left: 50%;
     transform: translateX(-50%);
     z-index: 2;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
-    color: rgba(255, 255, 255, 0.3);
+    gap: 0.75rem;
+    color: rgba(255, 255, 255, 0.35);
     font-size: 0.6rem;
-    font-weight: 900;
+    font-weight: 800;
     text-transform: uppercase;
-    letter-spacing: 0.4em;
+    letter-spacing: 0.35em;
     animation: bounce 4s var(--ease-slow) infinite;
   }
 
@@ -262,35 +243,47 @@ const {
   @media (max-width: 1024px) {
     .hero-title { font-size: 4.5rem; }
     .hero-subtitle { font-size: 1.1rem; max-width: 50ch; }
-    .hero-scroll-indicator { bottom: 9rem; }
+    .hero-scroll-indicator { bottom: 5.5rem; }
   }
 
   @media (max-width: 768px) {
-    .hero { padding: var(--space-2xl) var(--space-md); }
-    .hero-content { margin-top: 40px; }
-    .hero-title { font-size: 3.2rem; }
-    .hero-subtitle { font-size: 1rem; margin-bottom: var(--space-xl); }
-    .hero-cta { padding: 1.2rem 3rem; width: 100%; max-width: 320px; }
-    
+    .hero {
+      padding: calc(var(--space-lg) + 2.9rem) var(--space-md) calc(var(--space-lg) + 7.5rem);
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+    .hero-content { margin-top: 0; padding: 0 var(--space-md); }
+    .hero-title { font-size: 3rem; margin-bottom: var(--space-md); letter-spacing: 0.28em; }
+    .hero-subtitle { font-size: 0.95rem; margin-bottom: var(--space-md); max-width: 44ch; }
+
     .hero-market-nav {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
       flex-wrap: wrap;
-      background-color: #000;
+      background-color: transparent;
+      backdrop-filter: none;
     }
     
     .market-btn {
       flex: 1 1 50%;
-      height: 80px;
-      border-bottom: 1px solid var(--border-subtle);
-      font-size: 0.65rem;
+      height: 52px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 0.58rem;
+      letter-spacing: 0.28em;
     }
     
     .market-btn:nth-child(2n) { border-right: none; }
-    .market-btn:hover { height: 80px; margin-top: 0; background-color: #111; }
-    .hero-scroll-indicator { display: none; }
+    .market-btn:hover { background-color: rgba(255, 255, 255, 0.08); }
+    .hero-scroll-indicator { display: flex; bottom: 8.5rem; }
   }
 
   @media (max-width: 480px) {
-    .hero-title { font-size: 2.8rem; }
+    .hero { padding-top: calc(var(--space-md) + 2.9rem); padding-bottom: calc(var(--space-lg) + 7.25rem); }
+    .hero-title { font-size: 2.45rem; line-height: 1.05; letter-spacing: 0.26em; }
+    .hero-subtitle { font-size: 0.9rem; }
     .market-btn { flex: 1 1 100%; border-right: none; }
+    .hero-scroll-indicator { bottom: 14.5rem; }
   }
 </style>

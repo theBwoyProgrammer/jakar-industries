@@ -181,6 +181,20 @@
     }
   }
 
+  @media (max-width: 520px) {
+    .header-inner {
+      grid-template-columns: minmax(0, 1fr) auto;
+    }
+
+    .logo-text {
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      white-space: normal;
+      line-height: 1.1;
+      max-width: 160px;
+    }
+  }
+
   .logo:hover {
     transform: scale(1.02);
   }

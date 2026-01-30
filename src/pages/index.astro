@@ -146,4 +146,21 @@ import MarketSection from '../components/MarketSection.astro';
     margin-left: auto;
     margin-right: auto;
   }
+
+  @media (max-width: 768px) {
+    .cta-strip {
+      padding: var(--space-3xl) var(--space-md);
+    }
+
+    .cta-strip p {
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .cta-strip {
+      padding: var(--space-2xl) var(--space-sm);
+    }
+  }
 </style>
