@@ -101,11 +101,6 @@
       }
     };
 
-    // Expand on trigger hover
-    searchTrigger.addEventListener('mouseenter', expand);
-    searchContainer.addEventListener('mouseenter', expand);
-    searchContainer.addEventListener('mouseleave', collapse);
-
     searchInput.addEventListener('focus', () => {
       isFocused = true;
       expand();
@@ -274,7 +269,7 @@
     justify-content: flex-end;
     background: transparent;
     border: 1px solid transparent;
-    border-radius: 100px;
+    border-radius: 4px;
     padding: 0;
     transition: width 0.5s cubic-bezier(0.33, 1, 0.68, 1), background 0.3s ease;
     width: 44px;
@@ -296,7 +291,7 @@
   .search-trigger {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 50%;
+    border-radius: 4px;
     color: var(--color-white);
     cursor: pointer;
     display: flex;
