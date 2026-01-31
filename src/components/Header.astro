@@ -64,6 +64,7 @@
 
     const renderResults = (items) => {
       if (!searchResults) return;
+      searchResults.classList.add('search-results--visible');
       
       if (items.length > 0) {
         searchResults.innerHTML = items.map(item => 
@@ -95,7 +96,10 @@
     const collapse = () => {
       if (!isFocused) {
         searchContainer.classList.remove('search-container--expanded');
-        if (searchResults) searchResults.innerHTML = '';
+        if (searchResults) {
+          searchResults.innerHTML = '';
+          searchResults.classList.remove('search-results--visible');
+        }
       }
     };
 
@@ -115,7 +119,10 @@
       
       if (!query) {
         // Clear results if empty
-        if (searchResults) searchResults.innerHTML = '';
+        if (searchResults) {
+          searchResults.innerHTML = '';
+          searchResults.classList.remove('search-results--visible');
+        }
         return;
       }
 
@@ -333,17 +340,25 @@
     top: calc(100% + 0.5rem);
     left: 0;
     right: 0;
-    background: rgba(0, 0, 0, 0.95);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: transparent;
+    backdrop-filter: none;
+    border: none;
     border-radius: 8px;
     overflow: hidden;
     max-height: 300px;
     overflow-y: auto;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    box-shadow: none;
     display: flex;
     flex-direction: column;
     gap: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+  }
+
+  .search-results--visible {
+    opacity: 1;
+    pointer-events: auto;
   }
 
   .search-result-item {
@@ -396,15 +411,16 @@
     }
 
     .search-container--expanded {
-      width: clamp(240px, 70vw, 320px);
-      position: absolute;
-      right: var(--space-md);
-      top: 50%;
-      transform: translateY(-50%);
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+      width: clamp(200px, 60vw, 280px);
+      position: relative;
+      right: auto;
+      top: auto;
+      transform: none;
+      box-shadow: none;
       overflow: visible;
       max-width: calc(100vw - 2 * var(--space-md));
-      min-width: 240px;
+      min-width: 200px;
+      margin-left: auto;
     }
     
     .search-container {
