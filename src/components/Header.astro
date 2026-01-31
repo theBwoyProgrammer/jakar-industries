@@ -55,11 +55,11 @@
 
     // Searchable content
     const searchableContent = [
-      { title: 'Defense Operations', url: '#defense', keywords: 'military defense tactical forces operations' },
-      { title: 'First Responders', url: '#first-responders', keywords: 'police emergency law enforcement public safety' },
-      { title: 'Systems Support', url: '#systems-support', keywords: 'logistics training technical support maintenance' },
-      { title: 'Innovation & AI', url: '#innovation', keywords: 'artificial intelligence autonomous technology research' },
-      { title: 'Contact Us', url: '#contact', keywords: 'contact email partnership collaboration' },
+      { title: 'Defense Operations', url: '#defense' },
+      { title: 'First Responders', url: '#first-responders' },
+      { title: 'Systems Support', url: '#systems-support' },
+      { title: 'Innovation & AI', url: '#innovation' },
+      { title: 'Contact Us', url: '#contact' },
     ];
 
     const renderResults = (items) => {
@@ -84,14 +84,12 @@
           });
         });
       } else {
-        searchResults.innerHTML = '<div class="search-no-results">No results found</div>';
+        searchResults.innerHTML = '<div class="search-no-results">Keyword not found</div>';
       }
     };
 
     const expand = () => {
       searchContainer.classList.add('search-container--expanded');
-      // Show all sections by default
-      renderResults(searchableContent);
     };
 
     const collapse = () => {
@@ -116,14 +114,13 @@
       const query = e.target.value.toLowerCase().trim();
       
       if (!query) {
-        // Show all if empty
-        renderResults(searchableContent);
+        // Clear results if empty
+        if (searchResults) searchResults.innerHTML = '';
         return;
       }
 
       const results = searchableContent.filter(item => 
-        item.title.toLowerCase().includes(query) || 
-        item.keywords.toLowerCase().includes(query)
+        item.title.toLowerCase().includes(query)
       );
 
       renderResults(results);
