@@ -1,0 +1,468 @@
+---
+import BaseLayout from '../components/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="Contact Us — Jakar Industries" description="Get in touch with our mission experts for partnerships, inquiries, and support.">
+  <Hero
+    title="Contact Us"
+    subtitle="Connect with our mission experts"
+    backgroundVideo="/videos/hero-jet.mp4"
+  />
+
+  <section class="contact-main">
+    <div class="section">
+      <div class="contact-grid">
+        <div class="contact-form">
+          <h2>Send us a Message</h2>
+          <form id="contact-form" method="POST" action="https://formspree.io/f/YOUR_FORM_ID">
+            <div class="form-group">
+              <label for="name">Full Name *</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+
+            <div class="form-group">
+              <label for="organization">Organization</label>
+              <input type="text" id="organization" name="organization" />
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" />
+            </div>
+
+            <div class="form-group">
+              <label for="subject">Subject *</label>
+              <select id="subject" name="subject" required>
+                <option value="">Select a subject</option>
+                <option value="defense">Defense Operations Inquiry</option>
+                <option value="first-responders">First Responders Solutions</option>
+                <option value="systems-support">Systems Support</option>
+                <option value="innovation">Innovation & AI</option>
+                <option value="partnership">Partnership Opportunity</option>
+                <option value="careers">Careers</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea id="message" name="message" rows="6" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn--primary">Send Message</button>
+          </form>
+        </div>
+
+        <div class="contact-info">
+          <h2>Contact Information</h2>
+
+          <div class="info-card">
+            <h3>General Inquiries</h3>
+            <p>
+              <strong>Email:</strong><br />
+              <a href="mailto:info@jakarindustries.com">info@jakarindustries.com</a>
+            </p>
+            <p>
+              <strong>Phone:</strong><br />
+              <a href="tel:+1-202-555-0123">+1 (202) 555-0123</a>
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Defense Operations</h3>
+            <p>
+              <strong>Email:</strong><br />
+              <a href="mailto:defense@jakarindustries.com">defense@jakarindustries.com</a>
+            </p>
+            <p>
+              <strong>Phone:</strong><br />
+              <a href="tel:+1-202-555-0124">+1 (202) 555-0124</a>
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>First Responders</h3>
+            <p>
+              <strong>Email:</strong><br />
+              <a href="mailto:responders@jakarindustries.com">responders@jakarindustries.com</a>
+            </p>
+            <p>
+              <strong>Phone:</strong><br />
+              <a href="tel:+1-202-555-0125">+1 (202) 555-0125</a>
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Technical Support</h3>
+            <p>
+              <strong>24/7 Support Line:</strong><br />
+              <a href="tel:+1-202-555-9999">+1 (202) 555-9999</a>
+            </p>
+            <p>
+              <strong>Support Portal:</strong><br />
+              <a href="https://support.jakarindustries.com" target="_blank">support.jakarindustries.com</a>
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Headquarters</h3>
+            <p>
+              Jakar Industries<br />
+              1200 Defense Boulevard<br />
+              Arlington, VA 22201<br />
+              United States
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Follow Us</h3>
+            <div class="social-links">
+              <a href="#" title="LinkedIn">LinkedIn</a>
+              <a href="#" title="Twitter">Twitter</a>
+              <a href="#" title="Facebook">Facebook</a>
+              <a href="#" title="YouTube">YouTube</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="office-locations">
+    <div class="section">
+      <h2>Global Offices</h2>
+      <div class="locations-grid">
+        <div class="location">
+          <h4>North America</h4>
+          <p>
+            Arlington, VA<br />
+            San Diego, CA<br />
+            Colorado Springs, CO
+          </p>
+        </div>
+        <div class="location">
+          <h4>Europe</h4>
+          <p>
+            London, UK<br />
+            Berlin, Germany<br />
+            Paris, France
+          </p>
+        </div>
+        <div class="location">
+          <h4>Asia-Pacific</h4>
+          <p>
+            Tokyo, Japan<br />
+            Singapore<br />
+            Seoul, South Korea
+          </p>
+        </div>
+        <div class="location">
+          <h4>Middle East</h4>
+          <p>
+            Dubai, UAE<br />
+            Qatar<br />
+            Saudi Arabia
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-section">
+    <div class="section">
+      <h2>Frequently Asked Questions</h2>
+      
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h4>What is your typical response time?</h4>
+          <p>For general inquiries, we typically respond within 24 business hours. For urgent technical support, we provide 24/7 response with an average response time of 30 minutes.</p>
+        </div>
+
+        <div class="faq-item">
+          <h4>Do you offer custom solutions?</h4>
+          <p>Yes, we specialize in tailored solutions. Contact our mission experts to discuss your specific requirements and how we can customize our platforms for your organization.</p>
+        </div>
+
+        <div class="faq-item">
+          <h4>What support options are available?</h4>
+          <p>We offer comprehensive support including 24/7 technical assistance, preventive maintenance, training programs, field deployment teams, and remote diagnostics.</p>
+        </div>
+
+        <div class="faq-item">
+          <h4>How do I become a partner?</h4>
+          <p>We're always looking for strategic partners. Please email partnerships@jakarindustries.com with details about your organization and proposed partnership model.</p>
+        </div>
+
+        <div class="faq-item">
+          <h4>Are you hiring?</h4>
+          <p>Yes! Check our careers page or email careers@jakarindustries.com to learn about current openings in engineering, operations, and support roles.</p>
+        </div>
+
+        <div class="faq-item">
+          <h4>What certifications do you hold?</h4>
+          <p>We maintain NATO, NIST, FIPS 140-2, ISO 27001, and ITAR certifications. We're committed to the highest standards of security and compliance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .contact-main {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+    padding: var(--space-4xl) var(--space-lg);
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4xl);
+  }
+
+  .contact-form h2,
+  .contact-info h2 {
+    font-size: var(--fs-700);
+    margin-bottom: var(--space-2xl);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .form-group {
+    margin-bottom: var(--space-lg);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form-group label {
+    font-size: var(--fs-500);
+    font-weight: 600;
+    margin-bottom: var(--space-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 0.75rem 1rem;
+    border-radius: 4px;
+    font-size: var(--fs-500);
+    font-family: var(--font-sans);
+    transition: all 0.3s ease;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.12);
+    border-color: #0087ca;
+    box-shadow: 0 0 0 3px rgba(0, 135, 202, 0.1);
+  }
+
+  .form-group input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .form-group select option {
+    background: var(--color-dark);
+    color: white;
+  }
+
+  .btn {
+    background-color: #0087ca;
+    color: white;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 4px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: var(--fs-500);
+  }
+
+  .btn:hover {
+    background-color: #005fa3;
+    transform: translateY(-2px);
+  }
+
+  .info-card {
+    background: rgba(0, 135, 202, 0.08);
+    border-left: 4px solid #0087ca;
+    padding: var(--space-lg);
+    margin-bottom: var(--space-lg);
+    border-radius: 4px;
+  }
+
+  .info-card h3 {
+    font-size: var(--fs-600);
+    margin-bottom: var(--space-md);
+    color: #0087ca;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .info-card p {
+    font-size: var(--fs-500);
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: var(--space-md);
+    line-height: 1.6;
+  }
+
+  .info-card a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .info-card a:hover {
+    color: #0087ca;
+  }
+
+  .social-links {
+    display: flex;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+  }
+
+  .social-links a {
+    display: inline-block;
+    background: rgba(0, 135, 202, 0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: var(--fs-500);
+    font-weight: 600;
+  }
+
+  .social-links a:hover {
+    background: rgba(0, 135, 202, 0.4);
+  }
+
+  .office-locations {
+    background-color: #000;
+    color: var(--color-white);
+    padding: var(--space-4xl) var(--space-lg);
+  }
+
+  .office-locations h2 {
+    font-size: var(--fs-800);
+    margin-bottom: var(--space-3xl);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-align: center;
+  }
+
+  .locations-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-2xl);
+  }
+
+  .location {
+    background: rgba(0, 135, 202, 0.08);
+    border: 1px solid rgba(0, 135, 202, 0.2);
+    padding: var(--space-2xl);
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  .location h4 {
+    font-size: var(--fs-600);
+    color: #0087ca;
+    margin-bottom: var(--space-md);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .location p {
+    font-size: var(--fs-500);
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.8;
+  }
+
+  .faq-section {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+    padding: var(--space-4xl) var(--space-lg);
+  }
+
+  .faq-section h2 {
+    font-size: var(--fs-800);
+    margin-bottom: var(--space-3xl);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-align: center;
+  }
+
+  .faq-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-2xl);
+  }
+
+  .faq-item {
+    background: rgba(0, 135, 202, 0.05);
+    border: 1px solid rgba(0, 135, 202, 0.2);
+    padding: var(--space-2xl);
+    border-radius: 8px;
+  }
+
+  .faq-item h4 {
+    font-size: var(--fs-600);
+    color: #0087ca;
+    margin-bottom: var(--space-md);
+  }
+
+  .faq-item p {
+    font-size: var(--fs-500);
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-2xl);
+    }
+
+    .locations-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-lg);
+    }
+
+    .faq-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .contact-main,
+    .office-locations,
+    .faq-section {
+      padding: var(--space-3xl) var(--space-md);
+    }
+  }
+
+  @media (max-width: 520px) {
+    .locations-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      padding: 0.65rem 0.85rem;
+      font-size: var(--fs-500);
+    }
+  }
+</style>

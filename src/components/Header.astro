@@ -11,7 +11,12 @@
     </div>
     
     <div class="header-center">
-      <!-- Center space kept for minimalist balance -->
+      <nav class="main-nav">
+        <a href="/about">About</a>
+        <a href="/capabilities">Capabilities</a>
+        <a href="/solutions">Solutions</a>
+        <a href="/contact">Contact</a>
+      </nav>
     </div>
 
     <div class="header-right">
@@ -200,6 +205,41 @@
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  .main-nav {
+    display: flex;
+    gap: var(--space-2xl);
+  }
+
+  .main-nav a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: var(--fs-500);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: color 0.3s ease;
+    position: relative;
+  }
+
+  .main-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #0087ca;
+    transition: width 0.3s ease;
+  }
+
+  .main-nav a:hover {
+    color: var(--color-white);
+  }
+
+  .main-nav a:hover::after {
+    width: 100%;
   }
 
   .header-right {
@@ -395,6 +435,10 @@
       grid-template-columns: 1fr auto;
       padding: 0.75rem var(--space-md);
       gap: 1rem;
+    }
+    
+    .header-center {
+      display: none;
     }
     
     .header-right {

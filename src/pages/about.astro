@@ -1,0 +1,356 @@
+---
+import BaseLayout from '../components/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="About Us — Jakar Industries" description="Learn about Jakar Industries' mission, values, and commitment to advancing defense and public safety technology.">
+  <Hero
+    title="About Jakar Industries"
+    subtitle="Leading the transformation of mission-critical technology for those who serve"
+    backgroundVideo="/videos/hero-jet.mp4"
+  />
+
+  <section class="about-mission">
+    <div class="section">
+      <div class="about-grid">
+        <div class="about-content">
+          <h2>Our Mission</h2>
+          <p>At Jakar Industries, we are dedicated to pioneering innovative technologies that empower military and first responders worldwide. We believe that cutting-edge engineering, unwavering reliability, and deep mission understanding create the foundation for solutions that save lives and advance national security.</p>
+          
+          <h3>Who We Are</h3>
+          <p>Founded on principles of precision, innovation, and service, Jakar Industries has become a trusted partner for defense and public safety organizations. Our team of engineers, technologists, and mission experts work collaboratively to deliver solutions that meet the most demanding requirements in the world's most challenging environments.</p>
+        </div>
+        
+        <div class="about-values">
+          <h3>Our Values</h3>
+          <ul class="values-list">
+            <li>
+              <span class="value-icon">⚙️</span>
+              <strong>Innovation</strong>
+              <p>Pushing boundaries of what's possible in defense technology</p>
+            </li>
+            <li>
+              <span class="value-icon">🛡️</span>
+              <strong>Reliability</strong>
+              <p>Mission-proven performance in the most critical situations</p>
+            </li>
+            <li>
+              <span class="value-icon">👥</span>
+              <strong>Service</strong>
+              <p>Dedicated support for those who serve our nation</p>
+            </li>
+            <li>
+              <span class="value-icon">🔒</span>
+              <strong>Security</strong>
+              <p>Protecting data and maintaining operational integrity</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-stats">
+    <div class="section">
+      <h2>By The Numbers</h2>
+      <div class="stats-grid">
+        <div class="stat">
+          <div class="stat-number">25+</div>
+          <div class="stat-label">Years of Excellence</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">500+</div>
+          <div class="stat-label">Dedicated Experts</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">50+</div>
+          <div class="stat-label">Global Partnerships</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">1000+</div>
+          <div class="stat-label">Deployed Systems</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-leadership">
+    <div class="section">
+      <h2>Leadership</h2>
+      <p class="section-intro">Our leadership team brings decades of combined experience in defense technology, engineering, and strategic innovation.</p>
+      
+      <div class="leadership-grid">
+        <div class="leader-card">
+          <div class="leader-image" style="background: linear-gradient(135deg, #0087ca 0%, #003d7a 100%);"></div>
+          <h4>Dr. Sarah Mitchell</h4>
+          <p class="role">Chief Executive Officer</p>
+          <p class="bio">Former Vice President of Advanced Systems at leading defense contractor with 20+ years in aerospace and defense.</p>
+        </div>
+        
+        <div class="leader-card">
+          <div class="leader-image" style="background: linear-gradient(135deg, #00a8e8 0%, #0066cc 100%);"></div>
+          <h4>James Rodriguez</h4>
+          <p class="role">Chief Technology Officer</p>
+          <p class="bio">Pioneer in autonomous systems and AI integration, with distinguished career in military technology development.</p>
+        </div>
+        
+        <div class="leader-card">
+          <div class="leader-image" style="background: linear-gradient(135deg, #0099d8 0%, #004d99 100%);"></div>
+          <h4>Jennifer Chen</h4>
+          <p class="role">Chief Operations Officer</p>
+          <p class="bio">Operations excellence leader specializing in mission-critical logistics and supply chain management.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-commitment">
+    <div class="section">
+      <h2>Our Commitment</h2>
+      <div class="commitment-grid">
+        <div class="commitment-card">
+          <h3>Security First</h3>
+          <p>Every product undergoes rigorous security assessments and compliance evaluations to ensure mission integrity.</p>
+        </div>
+        <div class="commitment-card">
+          <h3>Innovation Pipeline</h3>
+          <p>We invest 20% of revenue into R&D to stay ahead of emerging threats and technological capabilities.</p>
+        </div>
+        <div class="commitment-card">
+          <h3>24/7 Support</h3>
+          <p>Global mission support centers ensure our clients receive rapid response and expert assistance anytime, anywhere.</p>
+        </div>
+        <div class="commitment-card">
+          <h3>Continuous Training</h3>
+          <p>Specialized training programs ensure operators maximize capability and mission effectiveness of our systems.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .about-mission {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+    padding: var(--space-4xl) var(--space-lg);
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4xl);
+    align-items: start;
+  }
+
+  .about-content h2,
+  .about-values h3 {
+    font-size: var(--fs-800);
+    margin-bottom: var(--space-lg);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .about-content p,
+  .about-values p {
+    font-size: var(--fs-500);
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: var(--space-md);
+  }
+
+  .about-values h3 {
+    font-size: var(--fs-600);
+  }
+
+  .values-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .values-list li {
+    margin-bottom: var(--space-lg);
+    padding-bottom: var(--space-lg);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .values-list li:last-child {
+    border-bottom: none;
+  }
+
+  .value-icon {
+    font-size: 1.5rem;
+    margin-right: var(--space-sm);
+  }
+
+  .values-list strong {
+    display: block;
+    font-size: var(--fs-600);
+    margin-bottom: var(--space-sm);
+  }
+
+  .about-stats {
+    background-color: #000;
+    color: var(--color-white);
+    padding: var(--space-4xl) var(--space-lg);
+    text-align: center;
+  }
+
+  .about-stats h2 {
+    font-size: var(--fs-800);
+    margin-bottom: var(--space-3xl);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-2xl);
+  }
+
+  .stat {
+    padding: var(--space-2xl);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+  }
+
+  .stat-number {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 900;
+    color: #0087ca;
+    margin-bottom: var(--space-sm);
+  }
+
+  .stat-label {
+    font-size: var(--fs-600);
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .about-leadership {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+    padding: var(--space-4xl) var(--space-lg);
+  }
+
+  .about-leadership h2 {
+    font-size: var(--fs-800);
+    margin-bottom: var(--space-lg);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .section-intro {
+    font-size: var(--fs-600);
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: var(--space-3xl);
+    max-width: 600px;
+  }
+
+  .leadership-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-2xl);
+  }
+
+  .leader-card {
+    text-align: center;
+  }
+
+  .leader-image {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 8px;
+    margin-bottom: var(--space-lg);
+  }
+
+  .leader-card h4 {
+    font-size: var(--fs-600);
+    margin-bottom: var(--space-sm);
+  }
+
+  .leader-card .role {
+    color: #0087ca;
+    font-size: var(--fs-500);
+    font-weight: 600;
+    margin-bottom: var(--space-md);
+  }
+
+  .leader-card .bio {
+    font-size: var(--fs-500);
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+  }
+
+  .about-commitment {
+    background-color: #000;
+    color: var(--color-white);
+    padding: var(--space-4xl) var(--space-lg);
+  }
+
+  .about-commitment h2 {
+    font-size: var(--fs-800);
+    margin-bottom: var(--space-3xl);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-align: center;
+  }
+
+  .commitment-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-2xl);
+  }
+
+  .commitment-card {
+    padding: var(--space-2xl);
+    border-left: 4px solid #0087ca;
+    background: rgba(0, 135, 202, 0.05);
+    border-radius: 4px;
+  }
+
+  .commitment-card h3 {
+    font-size: var(--fs-600);
+    margin-bottom: var(--space-md);
+    color: #0087ca;
+  }
+
+  .commitment-card p {
+    font-size: var(--fs-500);
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    .about-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-2xl);
+    }
+
+    .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-lg);
+    }
+
+    .leadership-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-2xl);
+    }
+
+    .commitment-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .about-mission,
+    .about-leadership {
+      padding: var(--space-3xl) var(--space-md);
+    }
+
+    .about-stats,
+    .about-commitment {
+      padding: var(--space-3xl) var(--space-md);
+    }
+  }
+</style>
