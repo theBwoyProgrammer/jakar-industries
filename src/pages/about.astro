@@ -1,356 +1,291 @@
 ---
 import BaseLayout from '../components/BaseLayout.astro';
-import Hero from '../components/Hero.astro';
 ---
 
-<BaseLayout title="About Us — Jakar Industries" description="Learn about Jakar Industries' mission, values, and commitment to advancing defense and public safety technology.">
-  <Hero
-    title="About Jakar Industries"
-    subtitle="Leading the transformation of mission-critical technology for those who serve"
-    backgroundVideo="/videos/hero-jet.mp4"
-  />
+<BaseLayout title="About — Jakar Industries" description="Learn about Jakar Industries' mission, values, and commitment to defense technology.">
+  <article class="article-page">
+    <div class="article-hero">
+      <video class="article-hero-video" autoplay loop muted playsinline>
+        <source src="/videos/hero-jet.mp4" type="video/mp4" />
+      </video>
+      <div class="article-hero-overlay"></div>
+      <div class="article-hero-content">
+        <h1 class="article-title">About Us</h1>
+        <p class="article-subtitle">Leading the transformation of mission-critical technology</p>
+      </div>
+    </div>
 
-  <section class="about-mission">
-    <div class="section">
-      <div class="about-grid">
-        <div class="about-content">
+    <div class="breadcrumb">
+      <nav>
+        <a href="/">Home</a>
+        <span class="breadcrumb-separator">›</span>
+        <span class="breadcrumb-current">About</span>
+      </nav>
+    </div>
+
+    <div class="article-content">
+      <div class="article-body">
+        <section class="article-section">
           <h2>Our Mission</h2>
           <p>At Jakar Industries, we are dedicated to pioneering innovative technologies that empower military and first responders worldwide. We believe that cutting-edge engineering, unwavering reliability, and deep mission understanding create the foundation for solutions that save lives and advance national security.</p>
-          
-          <h3>Who We Are</h3>
+        </section>
+
+        <section class="article-section">
+          <h2>Who We Are</h2>
           <p>Founded on principles of precision, innovation, and service, Jakar Industries has become a trusted partner for defense and public safety organizations. Our team of engineers, technologists, and mission experts work collaboratively to deliver solutions that meet the most demanding requirements in the world's most challenging environments.</p>
-        </div>
-        
-        <div class="about-values">
-          <h3>Our Values</h3>
-          <ul class="values-list">
-            <li>
-              <span class="value-icon">⚙️</span>
-              <strong>Innovation</strong>
-              <p>Pushing boundaries of what's possible in defense technology</p>
-            </li>
-            <li>
-              <span class="value-icon">🛡️</span>
-              <strong>Reliability</strong>
-              <p>Mission-proven performance in the most critical situations</p>
-            </li>
-            <li>
-              <span class="value-icon">👥</span>
-              <strong>Service</strong>
-              <p>Dedicated support for those who serve our nation</p>
-            </li>
-            <li>
-              <span class="value-icon">🔒</span>
-              <strong>Security</strong>
-              <p>Protecting data and maintaining operational integrity</p>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+          
+          <p>We combine decades of defense industry experience with cutting-edge research and development to create systems that perform flawlessly under pressure. From combat zones to disaster areas, our technology enables those who serve to accomplish their missions with confidence.</p>
+        </section>
 
-  <section class="about-stats">
-    <div class="section">
-      <h2>By The Numbers</h2>
-      <div class="stats-grid">
-        <div class="stat">
-          <div class="stat-number">25+</div>
-          <div class="stat-label">Years of Excellence</div>
-        </div>
-        <div class="stat">
-          <div class="stat-number">500+</div>
-          <div class="stat-label">Dedicated Experts</div>
-        </div>
-        <div class="stat">
-          <div class="stat-number">50+</div>
-          <div class="stat-label">Global Partnerships</div>
-        </div>
-        <div class="stat">
-          <div class="stat-number">1000+</div>
-          <div class="stat-label">Deployed Systems</div>
-        </div>
-      </div>
-    </div>
-  </section>
+        <section class="article-section article-highlight">
+          <h3>Core Values</h3>
+          <p><strong>Innovation:</strong> Pushing boundaries of what's possible in defense technology</p>
+          <p><strong>Reliability:</strong> Mission-proven performance in the most critical situations</p>
+          <p><strong>Service:</strong> Dedicated support for those who serve our nation</p>
+          <p><strong>Security:</strong> Protecting data and maintaining operational integrity</p>
+        </section>
 
-  <section class="about-leadership">
-    <div class="section">
-      <h2>Leadership</h2>
-      <p class="section-intro">Our leadership team brings decades of combined experience in defense technology, engineering, and strategic innovation.</p>
-      
-      <div class="leadership-grid">
-        <div class="leader-card">
-          <div class="leader-image" style="background: linear-gradient(135deg, #0087ca 0%, #003d7a 100%);"></div>
-          <h4>Dr. Sarah Mitchell</h4>
-          <p class="role">Chief Executive Officer</p>
-          <p class="bio">Former Vice President of Advanced Systems at leading defense contractor with 20+ years in aerospace and defense.</p>
-        </div>
-        
-        <div class="leader-card">
-          <div class="leader-image" style="background: linear-gradient(135deg, #00a8e8 0%, #0066cc 100%);"></div>
-          <h4>James Rodriguez</h4>
-          <p class="role">Chief Technology Officer</p>
-          <p class="bio">Pioneer in autonomous systems and AI integration, with distinguished career in military technology development.</p>
-        </div>
-        
-        <div class="leader-card">
-          <div class="leader-image" style="background: linear-gradient(135deg, #0099d8 0%, #004d99 100%);"></div>
-          <h4>Jennifer Chen</h4>
-          <p class="role">Chief Operations Officer</p>
-          <p class="bio">Operations excellence leader specializing in mission-critical logistics and supply chain management.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+        <section class="article-section">
+          <h2>By The Numbers</h2>
+          <div class="stats-inline">
+            <div class="stat-item">
+              <strong>25+</strong>
+              <span>Years of Excellence</span>
+            </div>
+            <div class="stat-item">
+              <strong>500+</strong>
+              <span>Dedicated Experts</span>
+            </div>
+            <div class="stat-item">
+              <strong>50+</strong>
+              <span>Global Partnerships</span>
+            </div>
+            <div class="stat-item">
+              <strong>1000+</strong>
+              <span>Deployed Systems</span>
+            </div>
+          </div>
+        </section>
 
-  <section class="about-commitment">
-    <div class="section">
-      <h2>Our Commitment</h2>
-      <div class="commitment-grid">
-        <div class="commitment-card">
-          <h3>Security First</h3>
-          <p>Every product undergoes rigorous security assessments and compliance evaluations to ensure mission integrity.</p>
-        </div>
-        <div class="commitment-card">
-          <h3>Innovation Pipeline</h3>
-          <p>We invest 20% of revenue into R&D to stay ahead of emerging threats and technological capabilities.</p>
-        </div>
-        <div class="commitment-card">
-          <h3>24/7 Support</h3>
-          <p>Global mission support centers ensure our clients receive rapid response and expert assistance anytime, anywhere.</p>
-        </div>
-        <div class="commitment-card">
-          <h3>Continuous Training</h3>
-          <p>Specialized training programs ensure operators maximize capability and mission effectiveness of our systems.</p>
-        </div>
+        <section class="article-section">
+          <h2>Leadership</h2>
+          <p>Our leadership team brings decades of combined experience in defense technology, engineering, and strategic innovation.</p>
+          
+          <div class="leadership-inline">
+            <p><strong>Dr. Sarah Mitchell, CEO</strong> — Former Vice President of Advanced Systems at leading defense contractor with 20+ years in aerospace and defense.</p>
+            <p><strong>James Rodriguez, CTO</strong> — Pioneer in autonomous systems and AI integration, with distinguished career in military technology development.</p>
+            <p><strong>Jennifer Chen, COO</strong> — Operations excellence leader specializing in mission-critical logistics and supply chain management.</p>
+          </div>
+        </section>
+
+        <section class="article-section">
+          <h2>Our Commitment</h2>
+          <p><strong>Security First:</strong> Every product undergoes rigorous security assessments and compliance evaluations to ensure mission integrity.</p>
+          <p><strong>Innovation Pipeline:</strong> We invest 20% of revenue into R&D to stay ahead of emerging threats and technological capabilities.</p>
+          <p><strong>24/7 Support:</strong> Global mission support centers ensure our clients receive rapid response and expert assistance anytime, anywhere.</p>
+          <p><strong>Continuous Training:</strong> Specialized training programs ensure operators maximize capability and mission effectiveness of our systems.</p>
+        </section>
       </div>
     </div>
-  </section>
+  </article>
 </BaseLayout>
 
 <style>
-  .about-mission {
-    background-color: var(--color-dark);
-    color: var(--color-white);
-    padding: var(--space-4xl) var(--space-lg);
-  }
-
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-4xl);
-    align-items: start;
-  }
-
-  .about-content h2,
-  .about-values h3 {
-    font-size: var(--fs-800);
-    margin-bottom: var(--space-lg);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-
-  .about-content p,
-  .about-values p {
-    font-size: var(--fs-500);
-    line-height: 1.6;
-    color: rgba(255, 255, 255, 0.8);
-    margin-bottom: var(--space-md);
-  }
-
-  .about-values h3 {
-    font-size: var(--fs-600);
-  }
-
-  .values-list {
-    list-style: none;
-    padding: 0;
-  }
-
-  .values-list li {
-    margin-bottom: var(--space-lg);
-    padding-bottom: var(--space-lg);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  .values-list li:last-child {
-    border-bottom: none;
-  }
-
-  .value-icon {
-    font-size: 1.5rem;
-    margin-right: var(--space-sm);
-  }
-
-  .values-list strong {
-    display: block;
-    font-size: var(--fs-600);
-    margin-bottom: var(--space-sm);
-  }
-
-  .about-stats {
+  .article-page {
     background-color: #000;
     color: var(--color-white);
-    padding: var(--space-4xl) var(--space-lg);
-    text-align: center;
+    min-height: 100vh;
   }
 
-  .about-stats h2 {
-    font-size: var(--fs-800);
-    margin-bottom: var(--space-3xl);
+  .article-hero {
+    position: relative;
+    height: 60vh;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .article-hero-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+
+  .article-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.5) 0%,
+      rgba(0, 0, 0, 0.7) 100%
+    );
+    z-index: 1;
+  }
+
+  .article-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 0 var(--space-lg);
+    text-align: left;
+  }
+
+  .article-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 900;
+    margin-bottom: var(--space-md);
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+  }
+
+  .article-subtitle {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
+  .breadcrumb {
+    background-color: #000;
+    padding: var(--space-lg) 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .breadcrumb nav {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 var(--space-lg);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9375rem;
+    font-weight: 400;
+  }
+
+  .breadcrumb a {
+    color: rgba(255, 255, 255, 0.65);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .breadcrumb a:hover {
+    color: #fff;
+  }
+
+  .breadcrumb-separator {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 1rem;
+    margin: 0 0.35rem;
+  }
+
+  .breadcrumb-current {
+    color: rgba(255, 255, 255, 0.4);
+  }
+
+  .article-content {
+    background-color: #f5f5f5;
+    padding: var(--space-4xl) 0;
+  }
+
+  .article-body {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 var(--space-lg);
+  }
+
+  .article-section {
+    margin-bottom: var(--space-4xl);
+  }
+
+  .article-section h2 {
+    font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+    margin-bottom: var(--space-lg);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    color: #000;
+  }
+
+  .article-section h3 {
+    font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+    margin-bottom: var(--space-md);
+    font-weight: 700;
+    color: #0087ca;
     text-transform: uppercase;
     letter-spacing: 0.05em;
   }
 
-  .stats-grid {
+  .article-section p {
+    font-size: clamp(1rem, 1.8vw, 1.125rem);
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: var(--space-lg);
+  }
+
+  .stats-inline {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: var(--space-2xl);
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-xl);
+    margin: var(--space-2xl) 0;
   }
 
-  .stat {
-    padding: var(--space-2xl);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-  }
-
-  .stat-number {
-    font-size: clamp(2.5rem, 5vw, 4rem);
+  .stat-item strong {
+    display: block;
+    font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 900;
     color: #0087ca;
     margin-bottom: var(--space-sm);
   }
 
-  .stat-label {
-    font-size: var(--fs-600);
-    color: rgba(255, 255, 255, 0.7);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-  }
-
-  .about-leadership {
-    background-color: var(--color-dark);
-    color: var(--color-white);
-    padding: var(--space-4xl) var(--space-lg);
-  }
-
-  .about-leadership h2 {
-    font-size: var(--fs-800);
-    margin-bottom: var(--space-lg);
+  .stat-item span {
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
+    color: #666;
     text-transform: uppercase;
     letter-spacing: 0.05em;
   }
 
-  .section-intro {
-    font-size: var(--fs-600);
-    color: rgba(255, 255, 255, 0.7);
-    margin-bottom: var(--space-3xl);
-    max-width: 600px;
-  }
-
-  .leadership-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-2xl);
-  }
-
-  .leader-card {
-    text-align: center;
-  }
-
-  .leader-image {
-    width: 100%;
-    aspect-ratio: 1;
-    border-radius: 8px;
-    margin-bottom: var(--space-lg);
-  }
-
-  .leader-card h4 {
-    font-size: var(--fs-600);
-    margin-bottom: var(--space-sm);
-  }
-
-  .leader-card .role {
-    color: #0087ca;
-    font-size: var(--fs-500);
-    font-weight: 600;
-    margin-bottom: var(--space-md);
-  }
-
-  .leader-card .bio {
-    font-size: var(--fs-500);
-    color: rgba(255, 255, 255, 0.7);
-    line-height: 1.6;
-  }
-
-  .about-commitment {
-    background-color: #000;
-    color: var(--color-white);
-    padding: var(--space-4xl) var(--space-lg);
-  }
-
-  .about-commitment h2 {
-    font-size: var(--fs-800);
-    margin-bottom: var(--space-3xl);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    text-align: center;
-  }
-
-  .commitment-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-2xl);
-  }
-
-  .commitment-card {
-    padding: var(--space-2xl);
+  .leadership-inline {
     border-left: 4px solid #0087ca;
-    background: rgba(0, 135, 202, 0.05);
+    padding-left: var(--space-xl);
+    margin: var(--space-2xl) 0;
+  }
+
+  .leadership-inline p {
+    font-style: italic;
+    color: #555;
+  }
+
+  .article-highlight {
+    background: rgba(0, 135, 202, 0.08);
+    border-left: 4px solid #0087ca;
+    padding: var(--space-2xl);
     border-radius: 4px;
   }
 
-  .commitment-card h3 {
-    font-size: var(--fs-600);
-    margin-bottom: var(--space-md);
-    color: #0087ca;
-  }
-
-  .commitment-card p {
-    font-size: var(--fs-500);
-    color: rgba(255, 255, 255, 0.7);
-    line-height: 1.6;
-  }
-
   @media (max-width: 768px) {
-    .about-grid {
+    .article-hero {
+      height: 50vh;
+    }
+
+    .article-content {
+      padding: var(--space-3xl) 0;
+    }
+
+    .article-body {
+      padding: 0 var(--space-md);
+    }
+
+    .article-section {
+      margin-bottom: var(--space-3xl);
+    }
+
+    .stats-inline {
       grid-template-columns: 1fr;
-      gap: var(--space-2xl);
-    }
-
-    .stats-grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: var(--space-lg);
-    }
-
-    .leadership-grid {
-      grid-template-columns: 1fr;
-      gap: var(--space-2xl);
-    }
-
-    .commitment-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .about-mission,
-    .about-leadership {
-      padding: var(--space-3xl) var(--space-md);
-    }
-
-    .about-stats,
-    .about-commitment {
-      padding: var(--space-3xl) var(--space-md);
     }
   }
 </style>

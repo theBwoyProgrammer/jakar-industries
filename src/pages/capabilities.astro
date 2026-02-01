@@ -1,402 +1,278 @@
 ---
 import BaseLayout from '../components/BaseLayout.astro';
-import Hero from '../components/Hero.astro';
 ---
 
-<BaseLayout title="Capabilities — Jakar Industries" description="Explore our core technologies and platforms for defense and first responder solutions.">
-  <Hero
-    title="Our Capabilities"
-    subtitle="Advanced technologies engineered for mission-critical performance"
-    backgroundVideo="/videos/hero-jet.mp4"
-  />
-
-  <section class="capabilities-intro">
-    <div class="section">
-      <h2>Core Technologies</h2>
-      <p class="intro-text">Built on decades of defense innovation, our capabilities span sensor integration, secure communications, autonomous systems, and advanced data analytics.</p>
+<BaseLayout title="Capabilities — Jakar Industries" description="Advanced technologies engineered for mission-critical performance.">
+  <article class="article-page">
+    <div class="article-hero">
+      <video class="article-hero-video" autoplay loop muted playsinline>
+        <source src="/videos/hero-jet.mp4" type="video/mp4" />
+      </video>
+      <div class="article-hero-overlay"></div>
+      <div class="article-hero-content">
+        <h1 class="article-title">Our Capabilities</h1>
+        <p class="article-subtitle">Advanced technologies for mission success</p>
+      </div>
     </div>
-  </section>
 
-  <section class="capability-grid">
-    <div class="section">
-      <div class="capabilities">
-        <div class="capability-card">
-          <div class="capability-header">
-            <h3>Sensor Integration</h3>
-            <span class="capability-icon">📡</span>
-          </div>
+    <div class="breadcrumb">
+      <nav>
+        <a href="/">Home</a>
+        <span class="breadcrumb-separator">›</span>
+        <span class="breadcrumb-current">Capabilities</span>
+      </nav>
+    </div>
+
+    <div class="article-content">
+      <div class="article-body">
+        <section class="article-section">
+          <p class="intro-text">Built on decades of defense innovation, our capabilities span sensor integration, secure communications, autonomous systems, and advanced data analytics.</p>
+        </section>
+
+        <section class="article-section">
+          <h2>Sensor Integration</h2>
           <p>Multi-spectrum sensor fusion systems that deliver unified situational awareness across military and public safety operations. Real-time data processing with latency under 100ms.</p>
-          <ul class="tech-list">
-            <li>LIDAR and Radar Fusion</li>
-            <li>Multi-spectrum Imaging</li>
-            <li>Real-time Data Processing</li>
-            <li>Distributed Architecture</li>
-          </ul>
-        </div>
+          <p><strong>Key Technologies:</strong> LIDAR and Radar Fusion, Multi-spectrum Imaging, Real-time Data Processing, Distributed Architecture</p>
+        </section>
 
-        <div class="capability-card">
-          <div class="capability-header">
-            <h3>Secure Communications</h3>
-            <span class="capability-icon">🔐</span>
-          </div>
+        <section class="article-section">
+          <h2>Secure Communications</h2>
           <p>Military-grade encrypted communication systems with end-to-end security. NATO and NIST compliance standards, interoperable with legacy systems.</p>
-          <ul class="tech-list">
-            <li>Military-Grade Encryption</li>
-            <li>Quantum-Ready Architecture</li>
-            <li>Legacy System Interop</li>
-            <li>Resilient Networks</li>
-          </ul>
-        </div>
+          <p><strong>Key Technologies:</strong> Military-Grade Encryption, Quantum-Ready Architecture, Legacy System Interop, Resilient Networks</p>
+        </section>
 
-        <div class="capability-card">
-          <div class="capability-header">
-            <h3>Autonomous Systems</h3>
-            <span class="capability-icon">🤖</span>
-          </div>
+        <section class="article-section">
+          <h2>Autonomous Systems</h2>
           <p>Next-generation autonomous platforms with advanced AI decision-making. Unmanned systems for reconnaissance, logistics, and combat support.</p>
-          <ul class="tech-list">
-            <li>AI/ML Integration</li>
-            <li>Autonomous Navigation</li>
-            <li>Swarm Coordination</li>
-            <li>Fail-Safe Operation</li>
-          </ul>
-        </div>
+          <p><strong>Key Technologies:</strong> AI/ML Integration, Autonomous Navigation, Swarm Coordination, Fail-Safe Operation</p>
+        </section>
 
-        <div class="capability-card">
-          <div class="capability-header">
-            <h3>Data Analytics</h3>
-            <span class="capability-icon">📊</span>
-          </div>
+        <section class="article-section">
+          <h2>Data Analytics</h2>
           <p>Advanced analytics platforms that transform raw operational data into actionable intelligence. Predictive modeling and pattern recognition at scale.</p>
-          <ul class="tech-list">
-            <li>Big Data Processing</li>
-            <li>Predictive Analytics</li>
-            <li>Pattern Recognition</li>
-            <li>Real-time Dashboards</li>
-          </ul>
-        </div>
+          <p><strong>Key Technologies:</strong> Big Data Processing, Predictive Analytics, Pattern Recognition, Real-time Dashboards</p>
+        </section>
 
-        <div class="capability-card">
-          <div class="capability-header">
-            <h3>Mission Hardware</h3>
-            <span class="capability-icon">⚙️</span>
+        <section class="article-section article-highlight">
+          <h3>Strategic Platforms</h3>
+          
+          <div class="platform-item">
+            <h4>SENTINEL Defense Platform</h4>
+            <p>Integrated command and control system for military operations. Real-time tactical awareness, threat assessment, and response coordination across distributed forces.</p>
+            <p><strong>Specs:</strong> 500+ User Nodes | Sub-100ms Latency | 99.99% Uptime | NATO Certified</p>
           </div>
-          <p>Ruggedized hardware platforms built for extreme environments. Designed to operate in temperatures from -40°C to +70°C with zero downtime requirements.</p>
-          <ul class="tech-list">
-            <li>Military-Spec Ruggedization</li>
-            <li>Extreme Environment Rated</li>
-            <li>Hot-Swap Redundancy</li>
-            <li>Modular Architecture</li>
-          </ul>
-        </div>
 
-        <div class="capability-card">
-          <div class="capability-header">
-            <h3>Training & Support</h3>
-            <span class="capability-icon">👥</span>
+          <div class="platform-item">
+            <h4>FIRST RESPONDER Coordination System</h4>
+            <p>Purpose-built platform for emergency services and public safety agencies. Unified dispatch, resource management, and inter-agency coordination.</p>
+            <p><strong>Specs:</strong> 500+ Agency Support | Mobile Optimized | Disaster Resilient | FIPS 140-2</p>
           </div>
-          <p>Comprehensive training programs and 24/7 mission support. Specialized certification courses and rapid-response technical assistance.</p>
-          <ul class="tech-list">
-            <li>Operator Certification</li>
-            <li>24/7 Global Support</li>
-            <li>Remote Diagnostics</li>
-            <li>Field Training Teams</li>
-          </ul>
-        </div>
+
+          <div class="platform-item">
+            <h4>NEXUS Analytics Engine</h4>
+            <p>Enterprise-scale data analytics and intelligence platform. Processes petabytes of operational data to deliver predictive insights and strategic advantage.</p>
+            <p><strong>Specs:</strong> Petabyte Scale | AI-Powered Insights | Scalable Architecture | Real-time Processing</p>
+          </div>
+        </section>
+
+        <section class="article-section">
+          <h2>Certifications & Compliance</h2>
+          <p>We maintain the highest standards of security and compliance: NATO Certified, NIST 800-53, FIPS 140-2, ISO 27001, ITAR Compliant, and Common Criteria.</p>
+        </section>
       </div>
     </div>
-  </section>
-
-  <section class="platforms">
-    <div class="section">
-      <h2>Strategic Platforms</h2>
-      
-      <div class="platform-card platform-1">
-        <div class="platform-content">
-          <h3>SENTINEL Defense Platform</h3>
-          <p>Integrated command and control system for military operations. Real-time tactical awareness, threat assessment, and response coordination across distributed forces.</p>
-          <div class="platform-specs">
-            <span class="spec">500+ User Nodes</span>
-            <span class="spec">Sub-100ms Latency</span>
-            <span class="spec">99.99% Uptime</span>
-            <span class="spec">NATO Certified</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="platform-card platform-2">
-        <div class="platform-content">
-          <h3>FIRST RESPONDER Coordination System</h3>
-          <p>Purpose-built platform for emergency services and public safety agencies. Unified dispatch, resource management, and inter-agency coordination.</p>
-          <div class="platform-specs">
-            <span class="spec">500+ Agency Support</span>
-            <span class="spec">Mobile Optimized</span>
-            <span class="spec">Disaster Resilient</span>
-            <span class="spec">FIPS 140-2</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="platform-card platform-3">
-        <div class="platform-content">
-          <h3>NEXUS Analytics Engine</h3>
-          <p>Enterprise-scale data analytics and intelligence platform. Processes petabytes of operational data to deliver predictive insights and strategic advantage.</p>
-          <div class="platform-specs">
-            <span class="spec">Petabyte Scale</span>
-            <span class="spec">AI-Powered Insights</span>
-            <span class="spec">Scalable Architecture</span>
-            <span class="spec">Real-time Processing</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="certifications">
-    <div class="section">
-      <h2>Certifications & Compliance</h2>
-      <div class="cert-grid">
-        <div class="cert-item">
-          <span class="cert-badge">NATO</span>
-          <span class="cert-name">NATO Certified</span>
-        </div>
-        <div class="cert-item">
-          <span class="cert-badge">NIST</span>
-          <span class="cert-name">NIST 800-53</span>
-        </div>
-        <div class="cert-item">
-          <span class="cert-badge">FIPS</span>
-          <span class="cert-name">FIPS 140-2</span>
-        </div>
-        <div class="cert-item">
-          <span class="cert-badge">ISO</span>
-          <span class="cert-name">ISO 27001</span>
-        </div>
-        <div class="cert-item">
-          <span class="cert-badge">EAR</span>
-          <span class="cert-name">ITAR Compliant</span>
-        </div>
-        <div class="cert-item">
-          <span class="cert-badge">CC</span>
-          <span class="cert-name">Common Criteria</span>
-        </div>
-      </div>
-    </div>
-  </section>
+  </article>
 </BaseLayout>
 
 <style>
-  .capabilities-intro {
-    background-color: var(--color-dark);
+  .article-page {
+    background-color: #000;
     color: var(--color-white);
-    padding: var(--space-4xl) var(--space-lg);
-    text-align: center;
+    min-height: 100vh;
   }
 
-  .capabilities-intro h2 {
-    font-size: var(--fs-800);
-    margin-bottom: var(--space-lg);
+  .article-hero {
+    position: relative;
+    height: 60vh;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .article-hero-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+
+  .article-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.5) 0%,
+      rgba(0, 0, 0, 0.7) 100%
+    );
+    z-index: 1;
+  }
+
+  .article-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 0 var(--space-lg);
+    text-align: left;
+  }
+
+  .article-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 900;
+    margin-bottom: var(--space-md);
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: -0.02em;
+  }
+
+  .article-subtitle {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
+  .breadcrumb {
+    background-color: #000;
+    padding: var(--space-lg) 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .breadcrumb nav {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 var(--space-lg);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9375rem;
+    font-weight: 400;
+  }
+
+  .breadcrumb a {
+    color: rgba(255, 255, 255, 0.65);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .breadcrumb a:hover {
+    color: #fff;
+  }
+
+  .breadcrumb-separator {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 1rem;
+    margin: 0 0.35rem;
+  }
+
+  .breadcrumb-current {
+    color: rgba(255, 255, 255, 0.4);
+  }
+
+  .article-content {
+    background-color: #f5f5f5;
+    padding: var(--space-4xl) 0;
+  }
+
+  .article-body {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 var(--space-lg);
   }
 
   .intro-text {
-    font-size: var(--fs-600);
-    color: rgba(255, 255, 255, 0.8);
-    max-width: 800px;
-    margin: 0 auto;
-    line-height: 1.6;
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    line-height: 1.7;
+    color: #222;
+    font-weight: 500;
   }
 
-  .capability-grid {
-    background-color: #000;
-    color: var(--color-white);
-    padding: var(--space-4xl) var(--space-lg);
+  .article-section {
+    margin-bottom: var(--space-4xl);
   }
 
-  .capabilities {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-2xl);
-  }
-
-  .capability-card {
-    background: rgba(0, 135, 202, 0.08);
-    border: 1px solid rgba(0, 135, 202, 0.2);
-    padding: var(--space-2xl);
-    border-radius: 8px;
-    transition: all 0.3s ease;
-  }
-
-  .capability-card:hover {
-    background: rgba(0, 135, 202, 0.15);
-    border-color: rgba(0, 135, 202, 0.4);
-    transform: translateY(-4px);
-  }
-
-  .capability-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: var(--space-md);
-  }
-
-  .capability-header h3 {
-    font-size: var(--fs-600);
-    color: #0087ca;
+  .article-section h2 {
+    font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+    margin-bottom: var(--space-lg);
+    font-weight: 900;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
+    letter-spacing: -0.01em;
+    color: #000;
   }
 
-  .capability-icon {
-    font-size: 2rem;
-  }
-
-  .capability-card p {
-    font-size: var(--fs-500);
-    color: rgba(255, 255, 255, 0.7);
-    line-height: 1.6;
+  .article-section h3 {
+    font-size: clamp(1.4rem, 2.5vw, 1.8rem);
     margin-bottom: var(--space-md);
-  }
-
-  .tech-list {
-    list-style: none;
-    padding: 0;
-  }
-
-  .tech-list li {
-    font-size: var(--fs-500);
-    padding: 0.5rem 0;
-    padding-left: 1.5rem;
-    position: relative;
-    color: rgba(255, 255, 255, 0.6);
-  }
-
-  .tech-list li::before {
-    content: "▸";
-    position: absolute;
-    left: 0;
+    font-weight: 700;
     color: #0087ca;
-  }
-
-  .platforms {
-    background-color: var(--color-dark);
-    color: var(--color-white);
-    padding: var(--space-4xl) var(--space-lg);
-  }
-
-  .platforms h2 {
-    font-size: var(--fs-800);
-    margin-bottom: var(--space-3xl);
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    text-align: center;
   }
 
-  .platform-card {
-    margin-bottom: var(--space-3xl);
-    padding: var(--space-3xl);
-    border-radius: 8px;
-    background: rgba(0, 135, 202, 0.05);
-    border-left: 4px solid #0087ca;
-  }
-
-  .platform-content h3 {
-    font-size: var(--fs-700);
-    margin-bottom: var(--space-md);
-    color: #0087ca;
-  }
-
-  .platform-content p {
-    font-size: var(--fs-600);
-    color: rgba(255, 255, 255, 0.8);
-    line-height: 1.7;
+  .article-section p {
+    font-size: clamp(1rem, 1.8vw, 1.125rem);
+    line-height: 1.8;
+    color: #333;
     margin-bottom: var(--space-lg);
   }
 
-  .platform-specs {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-md);
-  }
-
-  .spec {
-    background: rgba(0, 135, 202, 0.2);
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    font-size: var(--fs-500);
-    color: rgba(255, 255, 255, 0.9);
-  }
-
-  .certifications {
-    background-color: #000;
-    color: var(--color-white);
-    padding: var(--space-4xl) var(--space-lg);
-    text-align: center;
-  }
-
-  .certifications h2 {
-    font-size: var(--fs-800);
-    margin-bottom: var(--space-3xl);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-
-  .cert-grid {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: var(--space-lg);
-  }
-
-  .cert-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  .article-highlight {
+    background: rgba(0, 135, 202, 0.08);
+    border-left: 4px solid #0087ca;
     padding: var(--space-2xl);
-    border: 2px solid rgba(0, 135, 202, 0.3);
-    border-radius: 8px;
-    transition: all 0.3s ease;
+    border-radius: 4px;
   }
 
-  .cert-item:hover {
-    border-color: #0087ca;
-    background: rgba(0, 135, 202, 0.1);
+  .platform-item {
+    padding-bottom: var(--space-lg);
+    margin-bottom: var(--space-lg);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   }
 
-  .cert-badge {
-    font-size: var(--fs-600);
-    font-weight: 900;
+  .platform-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+
+  .platform-item h4 {
+    font-size: clamp(1.2rem, 2.2vw, 1.5rem);
     color: #0087ca;
-    margin-bottom: var(--space-sm);
+    margin-bottom: var(--space-md);
+    font-weight: 700;
+    text-transform: uppercase;
   }
 
-  .cert-name {
-    font-size: var(--fs-500);
-    color: rgba(255, 255, 255, 0.7);
+  .platform-item p {
+    margin-bottom: 0;
   }
 
   @media (max-width: 768px) {
-    .capabilities {
-      grid-template-columns: 1fr;
+    .article-hero {
+      height: 50vh;
     }
 
-    .cert-grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: var(--space-md);
+    .article-content {
+      padding: var(--space-3xl) 0;
     }
 
-    .capabilities-intro,
-    .capability-grid,
-    .platforms,
-    .certifications {
-      padding: var(--space-3xl) var(--space-md);
+    .article-body {
+      padding: 0 var(--space-md);
     }
 
-    .capability-card,
-    .platform-card,
-    .cert-item {
-      padding: var(--space-lg);
+    .article-section {
+      margin-bottom: var(--space-3xl);
     }
   }
 </style>

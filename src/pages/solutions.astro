@@ -1,401 +1,247 @@
 ---
 import BaseLayout from '../components/BaseLayout.astro';
-import Hero from '../components/Hero.astro';
 ---
 
 <BaseLayout title="Markets & Solutions — Jakar Industries" description="Specialized solutions for Defense Operations, First Responders, Systems Support, and Innovation.">
-  <Hero
-    title="Markets & Solutions"
-    subtitle="Purpose-built technology for every mission domain"
-    backgroundVideo="/videos/hero-jet.mp4"
-  />
+  <article class="article-page">
+    <div class="article-hero">
+      <video class="article-hero-video" autoplay loop muted playsinline>
+        <source src="/videos/hero-jet.mp4" type="video/mp4" />
+      </video>
+      <div class="article-hero-overlay"></div>
+      <div class="article-hero-content">
+        <h1 class="article-title">Markets & Solutions</h1>
+        <p class="article-subtitle">Purpose-built technology for every mission domain</p>
+      </div>
+    </div>
 
-  <section class="defense-section">
-    <div class="section">
-      <div class="market-content">
-        <div class="market-text">
+    <div class="breadcrumb">
+      <nav>
+        <a href="/">Home</a>
+        <span class="breadcrumb-separator">›</span>
+        <span class="breadcrumb-current">Markets & Solutions</span>
+      </nav>
+    </div>
+
+    <div class="article-content">
+      <div class="article-body">
+        <section class="article-section">
           <h2>Defense Operations</h2>
           <p>Providing elite military forces with the tactical advantage through advanced sensor integration, secure communications, and mission-proven hardware. Our systems are deployed with leading defense organizations worldwide, enabling real-time situational awareness and rapid decision-making in the most demanding combat environments.</p>
           
-          <h3>Key Capabilities</h3>
-          <ul class="capabilities-list">
-            <li>Real-time Tactical Command & Control</li>
-            <li>Multi-spectrum Sensor Fusion</li>
-            <li>Secure Military Communications</li>
-            <li>Autonomous System Integration</li>
-            <li>Advanced Threat Analysis</li>
-            <li>Mission-Critical Logistics</li>
-          </ul>
-          
-          <a href="#contact" class="btn btn--primary">Explore Defense Solutions</a>
-        </div>
-        <div class="market-image" style="background: linear-gradient(135deg, #0087ca 0%, #003d7a 100%);"></div>
-      </div>
-    </div>
-  </section>
+          <p>From special operations units to large-scale military deployments, our defense solutions integrate seamlessly with existing infrastructure while providing next-generation capabilities. Real-time tactical command and control, multi-spectrum sensor fusion, and autonomous system integration work together to create unmatched battlefield superiority.</p>
 
-  <section class="first-responders-section">
-    <div class="section">
-      <div class="market-content market-content--reverse">
-        <div class="market-image" style="background: linear-gradient(135deg, #ff6b35 0%, #cc3d1d 100%);"></div>
-        <div class="market-text">
+          <p><strong>Key Capabilities:</strong> Real-time Tactical Command & Control, Multi-spectrum Sensor Fusion, Secure Military Communications, Autonomous System Integration, Advanced Threat Analysis, Mission-Critical Logistics</p>
+        </section>
+
+        <section class="article-section">
           <h2>First Responders</h2>
           <p>Empowering law enforcement and emergency services with real-time situational awareness and robust network solutions for critical safety missions. Our platforms enable seamless coordination across departments and jurisdictions, improving response times and saving lives.</p>
           
-          <h3>Key Capabilities</h3>
-          <ul class="capabilities-list">
-            <li>Unified Dispatch Systems</li>
-            <li>Real-time Resource Coordination</li>
-            <li>Multi-Agency Interoperability</li>
-            <li>Mobile Command Vehicles</li>
-            <li>Emergency Network Resilience</li>
-            <li>Incident Management Platform</li>
-          </ul>
-          
-          <a href="#contact" class="btn btn--primary">Explore First Responder Solutions</a>
-        </div>
-      </div>
-    </div>
-  </section>
+          <p>When seconds count, first responders need technology that works flawlessly under pressure. Our unified dispatch systems, real-time resource coordination, and multi-agency interoperability ensure that every emergency response is executed with precision and efficiency.</p>
 
-  <section class="systems-support-section">
-    <div class="section">
-      <div class="market-content">
-        <div class="market-text">
+          <p><strong>Key Capabilities:</strong> Unified Dispatch Systems, Real-time Resource Coordination, Multi-Agency Interoperability, Mobile Command Vehicles, Emergency Network Resilience, Incident Management Platform</p>
+        </section>
+
+        <section class="article-section">
           <h2>Systems Support</h2>
           <p>End-to-end mission sustainment, including lifecycle management, specialized training, and 24/7 technical logistics for global operations. Our support teams are stationed worldwide and available around the clock to ensure your systems remain operational when it matters most.</p>
           
-          <h3>Key Capabilities</h3>
-          <ul class="capabilities-list">
-            <li>24/7 Global Mission Support</li>
-            <li>Preventive Maintenance Programs</li>
-            <li>Spare Parts Management</li>
-            <li>Software Update & Patching</li>
-            <li>Field Training Teams</li>
-            <li>Rapid Response Deployment</li>
-          </ul>
-          
-          <a href="#contact" class="btn btn--primary">Explore Support Services</a>
-        </div>
-        <div class="market-image" style="background: linear-gradient(135deg, #4CAF50 0%, #2d7a2d 100%);"></div>
-      </div>
-    </div>
-  </section>
+          <p>From preventive maintenance to rapid response deployment, we provide comprehensive support that keeps mission-critical systems running at peak performance. Our field training teams ensure operators are fully prepared to leverage every capability of their systems.</p>
 
-  <section class="innovation-section">
-    <div class="section">
-      <div class="market-content market-content--reverse">
-        <div class="market-image" style="background: linear-gradient(135deg, #9C27B0 0%, #6a1b9a 100%);"></div>
-        <div class="market-text">
+          <p><strong>Key Capabilities:</strong> 24/7 Global Mission Support, Preventive Maintenance Programs, Spare Parts Management, Software Update & Patching, Field Training Teams, Rapid Response Deployment</p>
+        </section>
+
+        <section class="article-section">
           <h2>Innovation & AI</h2>
           <p>Pioneering the next frontier of defense technology through autonomous systems, artificial intelligence, and next-generation data analytics. We're investing heavily in emerging technologies to keep our clients ahead of evolving threats and operational demands.</p>
           
-          <h3>Key Capabilities</h3>
-          <ul class="capabilities-list">
-            <li>AI-Powered Decision Systems</li>
-            <li>Machine Learning Analytics</li>
-            <li>Autonomous Vehicle Control</li>
-            <li>Predictive Threat Modeling</li>
-            <li>Neural Network Integration</li>
-            <li>Quantum-Ready Architecture</li>
-          </ul>
+          <p>Our innovation labs are developing the technologies that will define the next decade of defense operations. From AI-powered decision systems to quantum-ready architectures, we're building the future of mission-critical technology today.</p>
+
+          <p><strong>Key Capabilities:</strong> AI-Powered Decision Systems, Machine Learning Analytics, Autonomous Vehicle Control, Predictive Threat Modeling, Neural Network Integration, Quantum-Ready Architecture</p>
+        </section>
+
+        <section class="article-section article-highlight">
+          <h3>Ready to Transform Your Mission?</h3>
+          <p>Interested in learning more about how our solutions can enhance your operations? Our mission experts are ready to discuss your specific requirements and demonstrate how our technology can provide the tactical advantage your organization needs.</p>
           
-          <a href="#contact" class="btn btn--primary">Explore Innovation Labs</a>
-        </div>
+          <p><a href="/contact" class="inline-link">Connect with an Expert →</a></p>
+        </section>
       </div>
     </div>
-  </section>
-
-  <section class="solutions-comparison">
-    <div class="section">
-      <h2>Solutions At A Glance</h2>
-      
-      <div class="comparison-table">
-        <table>
-          <thead>
-            <tr>
-              <th>Feature</th>
-              <th>Defense Ops</th>
-              <th>First Responders</th>
-              <th>Systems Support</th>
-              <th>Innovation</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Real-time Coordination</td>
-              <td>✓</td>
-              <td>✓</td>
-              <td>✓</td>
-              <td>✓</td>
-            </tr>
-            <tr>
-              <td>24/7 Support</td>
-              <td>✓</td>
-              <td>✓</td>
-              <td>✓✓✓</td>
-              <td>✓</td>
-            </tr>
-            <tr>
-              <td>AI Integration</td>
-              <td>✓</td>
-              <td>✓</td>
-              <td>✓</td>
-              <td>✓✓✓</td>
-            </tr>
-            <tr>
-              <td>Multi-Agency Support</td>
-              <td>✓</td>
-              <td>✓✓✓</td>
-              <td>✓</td>
-              <td>✓</td>
-            </tr>
-            <tr>
-              <td>Global Deployment</td>
-              <td>✓✓✓</td>
-              <td>✓</td>
-              <td>✓✓✓</td>
-              <td>✓</td>
-            </tr>
-            <tr>
-              <td>Autonomous Systems</td>
-              <td>✓</td>
-              <td>✓</td>
-              <td>-</td>
-              <td>✓✓✓</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-
-  <section class="cta-strip" id="contact">
-    <div class="section">
-      <span class="section-tag">Ready to Transform Your Mission</span>
-      <h2>Partner with Jakar Industries</h2>
-      <p>Interested in learning more about how our solutions can enhance your operations? Our mission experts are ready to discuss your requirements.</p>
-      <a href="mailto:info@jakarindustries.com" class="btn btn--outline">Connect with an Expert</a>
-    </div>
-  </section>
+  </article>
 </BaseLayout>
 
 <style>
-  .defense-section,
-  .systems-support-section {
-    background-color: var(--color-dark);
-    color: var(--color-white);
-    padding: var(--space-4xl) var(--space-lg);
-  }
-
-  .first-responders-section,
-  .innovation-section {
+  .article-page {
     background-color: #000;
     color: var(--color-white);
-    padding: var(--space-4xl) var(--space-lg);
+    min-height: 100vh;
   }
 
-  .market-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-4xl);
-    align-items: center;
-  }
-
-  .market-content--reverse {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .market-content--reverse .market-image {
-    order: -1;
-  }
-
-  .market-text h2 {
-    font-size: var(--fs-800);
-    margin-bottom: var(--space-lg);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-
-  .market-text p {
-    font-size: var(--fs-600);
-    color: rgba(255, 255, 255, 0.8);
-    line-height: 1.7;
-    margin-bottom: var(--space-lg);
-  }
-
-  .market-text h3 {
-    font-size: var(--fs-600);
-    margin: var(--space-lg) 0 var(--space-md) 0;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-
-  .capabilities-list {
-    list-style: none;
-    padding: 0;
-    margin-bottom: var(--space-2xl);
-  }
-
-  .capabilities-list li {
-    font-size: var(--fs-500);
-    padding: 0.5rem 0;
-    padding-left: 2rem;
+  .article-hero {
     position: relative;
-    color: rgba(255, 255, 255, 0.7);
+    height: 60vh;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
   }
 
-  .capabilities-list li::before {
-    content: "▸";
+  .article-hero-video {
     position: absolute;
-    left: 0;
-    color: currentColor;
-    font-size: 1.5rem;
-  }
-
-  .market-image {
-    aspect-ratio: 4/3;
-    border-radius: 8px;
-  }
-
-  .solutions-comparison {
-    background-color: var(--color-dark);
-    color: var(--color-white);
-    padding: var(--space-4xl) var(--space-lg);
-  }
-
-  .solutions-comparison h2 {
-    font-size: var(--fs-800);
-    margin-bottom: var(--space-3xl);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    text-align: center;
-  }
-
-  .comparison-table {
-    overflow-x: auto;
-  }
-
-  table {
+    inset: 0;
     width: 100%;
-    border-collapse: collapse;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
   }
 
-  th {
-    background: rgba(0, 135, 202, 0.2);
-    padding: var(--space-lg);
+  .article-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.5) 0%,
+      rgba(0, 0, 0, 0.7) 100%
+    );
+    z-index: 1;
+  }
+
+  .article-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 0 var(--space-lg);
     text-align: left;
-    font-weight: 700;
-    border-bottom: 2px solid rgba(0, 135, 202, 0.4);
-    font-size: var(--fs-500);
+  }
+
+  .article-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 900;
+    margin-bottom: var(--space-md);
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: -0.02em;
   }
 
-  td {
-    padding: var(--space-lg);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    font-size: var(--fs-500);
+  .article-subtitle {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 400;
+    line-height: 1.5;
   }
 
-  tr:hover {
-    background: rgba(0, 135, 202, 0.08);
+  .breadcrumb {
+    background-color: #000;
+    padding: var(--space-lg) 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
 
-  .btn {
-    display: inline-block;
-    padding: 1rem 2rem;
-    border-radius: 4px;
+  .breadcrumb nav {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 var(--space-lg);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9375rem;
+    font-weight: 400;
+  }
+
+  .breadcrumb a {
+    color: rgba(255, 255, 255, 0.65);
     text-decoration: none;
-    font-weight: 600;
+    transition: color 0.2s ease;
+  }
+
+  .breadcrumb a:hover {
+    color: #fff;
+  }
+
+  .breadcrumb-separator {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 1rem;
+    margin: 0 0.35rem;
+  }
+
+  .breadcrumb-current {
+    color: rgba(255, 255, 255, 0.4);
+  }
+
+  .article-content {
+    background-color: #f5f5f5;
+    padding: var(--space-4xl) 0;
+  }
+
+  .article-body {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 var(--space-lg);
+  }
+
+  .article-section {
+    margin-bottom: var(--space-4xl);
+  }
+
+  .article-section h2 {
+    font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+    margin-bottom: var(--space-lg);
+    font-weight: 900;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    transition: all 0.3s ease;
-    font-size: var(--fs-500);
-  }
-
-  .btn--primary {
-    background-color: #0087ca;
-    color: white;
-  }
-
-  .btn--primary:hover {
-    background-color: #005fa3;
-    transform: translateY(-2px);
-  }
-
-  .btn--outline {
-    border: 2px solid white;
-    color: white;
-  }
-
-  .btn--outline:hover {
-    background-color: white;
+    letter-spacing: -0.01em;
     color: #000;
   }
 
-  .cta-strip {
-    background-color: #000;
-    color: var(--color-white);
-    text-align: center;
-    padding: var(--space-4xl) var(--space-lg);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  .section-tag {
-    font-size: var(--fs-500);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
+  .article-section h3 {
+    font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+    margin-bottom: var(--space-md);
+    font-weight: 700;
     color: #0087ca;
-    font-weight: 600;
-  }
-
-  .cta-strip h2 {
-    font-size: clamp(2rem, 4.5vw, 3rem);
-    margin: var(--space-lg) 0 var(--space-md) 0;
     text-transform: uppercase;
-    font-weight: 900;
+    letter-spacing: 0.05em;
   }
 
-  .cta-strip p {
-    font-size: 1.1rem;
-    color: rgba(255, 255, 255, 0.7);
-    margin-bottom: var(--space-2xl);
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
+  .article-section p {
+    font-size: clamp(1rem, 1.8vw, 1.125rem);
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: var(--space-lg);
+  }
+
+  .article-highlight {
+    background: rgba(0, 135, 202, 0.08);
+    border-left: 4px solid #0087ca;
+    padding: var(--space-2xl);
+    border-radius: 4px;
+  }
+
+  .inline-link {
+    color: #0087ca;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+
+  .inline-link:hover {
+    color: #00a8e8;
   }
 
   @media (max-width: 768px) {
-    .market-content,
-    .market-content--reverse {
-      grid-template-columns: 1fr;
+    .article-hero {
+      height: 50vh;
     }
 
-    .market-content--reverse .market-image {
-      order: 0;
+    .article-content {
+      padding: var(--space-3xl) 0;
     }
 
-    .defense-section,
-    .systems-support-section,
-    .first-responders-section,
-    .innovation-section,
-    .solutions-comparison,
-    .cta-strip {
-      padding: var(--space-3xl) var(--space-md);
+    .article-body {
+      padding: 0 var(--space-md);
     }
 
-    table {
-      font-size: 0.9rem;
-    }
-
-    th,
-    td {
-      padding: var(--space-md);
-    }
-
-    .cta-strip p {
-      font-size: 1rem;
+    .article-section {
+      margin-bottom: var(--space-3xl);
     }
   }
 </style>
