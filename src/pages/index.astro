@@ -13,10 +13,10 @@ import MarketSection from '../components/MarketSection.astro';
     ctaHref="#defense"
     backgroundVideo="/videos/hero-jet.mp4"
     marketLinks={[
-      { label: "Defense Ops", href: "#defense" },
-      { label: "First Responders", href: "#first-responders" },
-      { label: "Systems Support", href: "#systems-support" },
-      { label: "Innovation", href: "#innovation" }
+      { label: "About", href: "/about" },
+      { label: "Capabilities", href: "/capabilities" },
+      { label: "Solutions", href: "/solutions" },
+      { label: "Contact", href: "/contact" }
     ]}
   />
 
@@ -62,30 +62,6 @@ import MarketSection from '../components/MarketSection.astro';
 <script>
   // Orchestrate the morphing scroll experience
   const sections = document.querySelectorAll('.market-section');
-  const marketLinks = document.querySelectorAll('.market-btn');
-
-  // Handle high-impact smooth scrolls
-  marketLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-      const targetId = link.getAttribute('href');
-      if (targetId?.startsWith('#')) {
-        e.preventDefault();
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          // Add a temporary state for immediate reveal feel
-          targetElement.classList.add('market-section--preparing');
-          
-          targetElement.scrollIntoView({ behavior: 'smooth' });
-          
-          // Force reveal slightly early
-          setTimeout(() => {
-            targetElement.classList.add('market-section--visible');
-            targetElement.classList.remove('market-section--preparing');
-          }, 100);
-        }
-      }
-    });
-  });
 
   // Intersection Observer for natural scroll reveals
   const observerOptions = {
